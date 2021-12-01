@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Memo;
+
 
 class MemoController extends Controller
 {
@@ -16,13 +19,29 @@ class MemoController extends Controller
 
     public function index()
     {
-        $user = Auth::user();
-        return view('memos',compact('user'));
+        return view('memos');
+    }
+    
+    public function save(Request $request)
+    {
+        $data = $request -> all();
+        // dd($data);
+
+        if($request->has('save')){//ログインユーザーメモ新規登録
+            Memo::insertGetId([
+                'user_id'=>$data['user_id'],
+                'memo'=>$data['memo'],
+                'status'=>1,
+             ]);
+        }
+        return redirect()->route('memo');
     }
 
-    public function user(Request $request)
+    public function memo()
     {
-       return ['name',Auth::user()];
-       return $request->user();
+        $user = auth()->user();
+        return Memo::where('user_id', $user['id'])->first()->memo ??null;
     }
+    
+ 
 }

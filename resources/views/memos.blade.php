@@ -3,8 +3,7 @@
 @section('content')
 
 <div id="app">
-    {{$user}}
-    <memo></memo>
+    <memo :csrf="{{json_encode(csrf_token())}}"></memo>
 </div>
 
 

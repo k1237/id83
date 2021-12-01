@@ -25,6 +25,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+/*API*/ 
+Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
+Route::middleware('auth')->get('api/memo', [MemoController::class, 'memo']);
+
+/*ROUTE*/
 Route::group(['middleware' => 'auth'], function () {
     // Route::get('/{any}', function () {
     //     return view('home');
@@ -33,7 +38,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::get('/memo', [MemoController::class, 'index'])->name('memo');
-    
+    Route::post('/save', [MemoController::class, 'save'])->name('save');
+
     Route::get('/idea', [IdeaController::class, 'index'])->name('idea');
     
     Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
