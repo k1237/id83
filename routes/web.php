@@ -28,6 +28,7 @@ Auth::routes();
 /*API*/ 
 Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
 Route::middleware('auth')->get('api/memo', [MemoController::class, 'memo']);
+Route::middleware('auth')->get('api/idea', [ScheduleController::class, 'idea']);
 
 /*ROUTE*/
 Route::group(['middleware' => 'auth'], function () {
@@ -41,6 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/save', [MemoController::class, 'save'])->name('save');
 
     Route::get('/idea', [IdeaController::class, 'index'])->name('idea');
+    Route::post('/add', [IdeaController::class, 'add'])->name('add');
     
     Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
     

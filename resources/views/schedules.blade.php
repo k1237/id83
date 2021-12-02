@@ -11,7 +11,7 @@
                     </div>
                     <div class="card-body">
                         <div id="app">
-                         <schedule></schedule>
+                         <schedule :csrf="{{json_encode(csrf_token())}}"></schedule>
                         </div>
 
                     </div>

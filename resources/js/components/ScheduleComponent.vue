@@ -1,12 +1,14 @@
 <template>
   <form method="post" action="./save">
+    <input type="hidden" name="_token" v-bind:value="CSRF" />
+     <input type="hidden" name="user_id" v-model="users.id" />
     <div class="mb-3 d-flex">
       <input
         type="text"
         class="form-control col-xs-4"
         name="idea_text"
         style="width: 80%"
-        value="test"
+        v-model="value"
         readonly
       />
       <button type="submit" name="store" class="btn btn-primary ml-2">
@@ -20,4 +22,38 @@
 </template>
 
 <script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      value: "",
+      users: [],
+    };
+  },
+
+  mounted() {
+    this.settingData();
+    this.value = this.Idea.idea;
+  },
+
+  props: {
+    CSRF: {
+      type: String,
+      required: true,
+    },
+    Number: Number,
+    Idea: Object,
+  },
+
+   methods: {
+    User: async function () {
+      await axios.get("http://127.0.0.1:8000/api/profile").then((response) => {
+        this.users = response.data;
+      });
+    },
+    settingData: async function () {
+      await this.User();
+    },
+  },
+};
 </script>

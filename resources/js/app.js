@@ -11,11 +11,13 @@ import { createApp } from 'vue';
 // import VueRouter from 'vue-router';
 // import router from "./routes/router";
 
-import App from './App.vue';
+
 import Home from "./components/HomeComponent.vue";
 import Memo from "./components/MemoComponent.vue";
-import Idea from "./components/IdeaComponent.vue";
-import Schedule from "./components/ScheduleComponent.vue";
+import Idea from './Idea.vue';
+import IdeaComponent from "./components/IdeaComponent.vue";
+import Schedule from './Schedule.vue';
+import ScheduleComponent from "./components/ScheduleComponent.vue";
 import Excuted from "./components/ExcutedComponent.vue";
 
 // window.Vue = Vue;
@@ -27,10 +29,11 @@ import Excuted from "./components/ExcutedComponent.vue";
 // });
 
 const app = createApp({})
-app.component('app', App);
 app.component('home', Home);
 app.component('memo', Memo);
 app.component('idea', Idea);
+app.component('idea-component', IdeaComponent);
 app.component('schedule', Schedule);
+app.component('schedule-component', ScheduleComponent);
 app.component('excuted', Excuted);
 app.mount('#app')

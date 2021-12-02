@@ -24,15 +24,22 @@ class MemoController extends Controller
     
     public function save(Request $request)
     {
+        $user = auth()->user();
         $data = $request -> all();
         // dd($data);
 
-        if($request->has('save')){//ログインユーザーメモ新規登録
+        if($data['memo']!=""&&$request->has('save')){
             Memo::insertGetId([
                 'user_id'=>$data['user_id'],
                 'memo'=>$data['memo'],
                 'status'=>1,
              ]);
+        }elseif($request->has('update')){
+            Memo::where('user_id', $user['id'])->update([
+                'memo'=>$data['memo'],
+            ]);
+        }elseif($request->has('delete')){
+            Memo::where('user_id', $user['id'])->delete();
         }
         return redirect()->route('memo');
     }

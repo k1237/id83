@@ -12,7 +12,7 @@
 
                     <div class="card-body">
                         <div id="app">
-                            <app></app>
+                            <idea :csrf="{{json_encode(csrf_token())}}"></idea>
                         </div>
                     </div>
                 </div>
