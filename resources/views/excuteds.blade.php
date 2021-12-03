@@ -11,9 +11,8 @@
                     </div>
                     <div class="card-body">
                         <div id="app">
-                            <excuted></excuted>
+                            <excuted :csrf="{{json_encode(csrf_token())}}"></excuted>
                         </div>
-
                     </div>
                 </div>
             </div>

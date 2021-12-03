@@ -35,6 +35,10 @@ class HomeController extends Controller
         return Auth::user();
     }
 
-    
+    public function csrf(Request $request)
+    {
+        return json_encode(csrf_token());
+    }
+
    
 }

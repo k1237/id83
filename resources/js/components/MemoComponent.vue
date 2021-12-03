@@ -6,7 +6,6 @@
           <div class="card-header">メモ帳</div>
           <div class="card-body">
             <form method="post" action="./save">
-              <input type="hidden" name="_token" v-bind:value="csrf" />
               <input type="hidden" name="user_id" v-model="users.id" />
               <textarea
                 class="form-control"
@@ -15,8 +14,12 @@
                 rows="20"
                 v-model="memo"
               ></textarea>
-              <button type="submit" name="save" class="btn btn-primary"
-              v-show="canUsesave">
+              <button
+                type="submit"
+                name="save"
+                class="btn btn-primary"
+                v-show="canUsesave"
+              >
                 保存
               </button>
               <button type="submit" name="update" class="btn btn-warning">
@@ -41,22 +44,16 @@ export default {
     return {
       users: [],
       memo: "",
-      init:"",
+      init: "",
     };
   },
 
-  props: {
-    csrf: {
-      type: String,
-      required: true,
-    },
-  },
 
   mounted() {
+    this.settingCsrf();
     this.settingData();
     this.settingMemo();
   },
-
 
   computed: {
     canUsesave: function () {
@@ -65,6 +62,7 @@ export default {
   },
 
   methods: {
+
     User: async function () {
       await axios.get("http://127.0.0.1:8000/api/profile").then((response) => {
         this.users = response.data;
@@ -83,6 +81,7 @@ export default {
     settingMemo: async function () {
       await this.Memo();
     },
+    
   },
 };
 </script>

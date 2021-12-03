@@ -21,7 +21,22 @@ class ScheduleController extends Controller
     public function idea()
     {
         $user = auth()->user();
-        return Idea::where('user_id', $user['id'])->get();
+        return Idea::where('user_id', $user['id'])->where('status',1)->get();
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request -> all();
+        // dd($data);
+
+        if($request->has('store')){
+            Idea::where('id',$data['id'])->update([
+                'status'=>2,
+            ]);
+        }elseif($request->has('delete')){
+            Idea::where('id',$data['id'])->delete();
+        }
+        return redirect()->route('schedule');
     }
 }
 

@@ -3,15 +3,15 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">保存したアイデア</div>
+          <div class="card-header">実行したアイデア</div>
           <div class="card-body">
-            <Schedulecomponent
+            <Excutedcomponent
               v-for="(idea, index) in ideas"
               v-bind:key="index"
               :Number="index"
               :CSRF="csrf"
               :Idea="idea"
-            ></Schedulecomponent>
+            ></Excutedcomponent>
           </div>
         </div>
       </div>
@@ -20,19 +20,19 @@
 </template>
 
 <script>
-import Schedulecomponent from "./components/ScheduleComponent.vue";
+import Excutedcomponent from "./components/ExcutedComponent.vue";
 import axios from "axios";
 
 export default {
   name: "App",
 
   components: {
-    Schedulecomponent,
+    Excutedcomponent,
   },
 
   data() {
     return {
-      ideas: "",
+      ideas: [],
     };
   },
 
@@ -48,13 +48,13 @@ export default {
   },
 
   methods: {
-    Idea: async function () {
-      await axios.get("http://127.0.0.1:8000/api/idea").then((response) => {
+    Idea2: async function () {
+      await axios.get("http://127.0.0.1:8000/api/idea2").then((response) => {
         this.ideas = response.data;
       });
     },
     settingData: async function () {
-      await this.Idea();
+      await this.Idea2();
     },
   },
 };

@@ -20,7 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -71,20 +71,10 @@
                 </div>
             </div>
         </nav>
-       
-        <div class="mx-auto text-center mt-5 ">
-        <h1 class="mb-5">IdeaList(DB版)</h1>
-        <a href="{{url('/memo')}}"><button type="button" class="btn btn-success">メモ帳</button></a>
-        <a href="{{url('/idea')}}"><button type="button" class="btn btn-primary ml-2">アイデア</button></a>
-        <a href="{{url('/schedule')}}"><button type="button" class="btn btn-warning ml-2">実行予定</button></a>
-        <a href="{{url('/excuted')}}"><button type="button" class="btn btn-danger ml-2">実行済</button></a>
-        <a href="{{url('/home')}}"><button type="button" class="btn btn-dark ml-2">使用方法</button></a>
-        </div>
-
+      
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
  
 </body>
 </html>

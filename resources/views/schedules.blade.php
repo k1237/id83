@@ -13,7 +13,6 @@
                         <div id="app">
                          <schedule :csrf="{{json_encode(csrf_token())}}"></schedule>
                         </div>
-
                     </div>
                 </div>
             </div>

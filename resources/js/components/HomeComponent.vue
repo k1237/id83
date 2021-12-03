@@ -16,7 +16,6 @@
 
             ⑤:②～④を繰り返す<br />
 
-            {{ test }}:{{ test }}
           </div>
         </div>
       </div>
@@ -24,12 +23,3 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      test: "テスト",
-    };
-  },
-};
-</script>

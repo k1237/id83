@@ -1,7 +1,9 @@
 <template>
   <form method="post" action="./save">
     <input type="hidden" name="_token" v-bind:value="CSRF" />
-     <input type="hidden" name="user_id" v-model="users.id" />
+    <input type="hidden" name="id" v-model="id" />
+    <input type="hidden" name="user_id" v-model="users.id" />
+
     <div class="mb-3 d-flex">
       <input
         type="text"
@@ -28,12 +30,14 @@ export default {
     return {
       value: "",
       users: [],
+      id: "",
     };
   },
 
   mounted() {
     this.settingData();
     this.value = this.Idea.idea;
+    this.id = this.Idea.id;
   },
 
   props: {
@@ -45,7 +49,7 @@ export default {
     Idea: Object,
   },
 
-   methods: {
+  methods: {
     User: async function () {
       await axios.get("http://127.0.0.1:8000/api/profile").then((response) => {
         this.users = response.data;

@@ -1,14 +1,23 @@
 <template>
-  <div>
-    <Ideacomponent
-      v-for="(idea, index) in idea_ar"
-      v-bind:key="index"
-      :Number="index"
-      :CSRF="csrf"
-      :Idea="idea"
-      v-on:change-event="changeAction"
-      v-on:del-event="delAction"
-    ></Ideacomponent>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">アイデア</div>
+          <div class="card-body">
+            <Ideacomponent
+              v-for="(idea, index) in idea_ar"
+              v-bind:key="index"
+              :Number="index"
+              :CSRF="csrf"
+              :Idea="idea"
+              v-on:change-event="changeAction"
+              v-on:del-event="delAction"
+            ></Ideacomponent>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
