@@ -53,7 +53,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/add', [IdeaController::class, 'add'])->name('add');
 
-    Route::post('/save', [ScheduleController::class, 'store'])->name('store');
+    Route::post('/store', [ScheduleController::class, 'store'])->name('store');
 
     Route::post('/delete', [ExcutedController::class, 'delete'])->name('delete');
 });

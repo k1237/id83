@@ -1,5 +1,5 @@
 <template>
-  <form method="post" action="./save">
+  <form method="post" action="./store">
     <input type="hidden" name="_token" v-bind:value="CSRF" />
     <input type="hidden" name="id" v-model="id" />
     <input type="hidden" name="user_id" v-model="users.id" />
