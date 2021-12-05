@@ -32,6 +32,6 @@ export const router = createRouter({
       path: '/excuted',
       name: 'excuted',
       component:Excuted
-    }
+    },
   ],
 })

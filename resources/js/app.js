@@ -10,7 +10,6 @@ import {router} from'./routes/router'
 import App from "./App.vue";
 let app = createApp(App)
 app.use(router)
-app.component('app', App);
 app.mount('#app')
 
 
