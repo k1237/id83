@@ -1,6 +1,6 @@
 <template>
   <form method="post" action="./store">
-    <input type="hidden" name="_token" v-bind:value="CSRF" />
+    <input type="hidden" name="_token" :value="csrf" />
     <input type="hidden" name="id" v-model="id" />
     <input type="hidden" name="user_id" v-model="users.id" />
 
@@ -31,6 +31,9 @@ export default {
       value: "",
       users: [],
       id: "",
+      csrf: document.head.querySelector('meta[name="csrf-token"]')
+        ? document.head.querySelector('meta[name="csrf-token"]').content
+        : "",
     };
   },
 
@@ -38,13 +41,14 @@ export default {
     this.settingData();
     this.value = this.Idea.idea;
     this.id = this.Idea.id;
+    if (!this.csrf) {
+      console.warn(
+        'The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">'
+      );
+    }
   },
 
   props: {
-    CSRF: {
-      type: String,
-      required: true,
-    },
     Number: Number,
     Idea: Object,
   },

@@ -36,7 +36,7 @@ class ScheduleController extends Controller
         }elseif($request->has('delete')){
             Idea::where('id',$data['id'])->delete();
         }
-        return redirect()->route('schedule');
+        return redirect('/schedule');
     }
 }
 

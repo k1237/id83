@@ -9,7 +9,6 @@
               v-for="(idea, index) in ideas"
               v-bind:key="index"
               :Number="index"
-              :CSRF="csrf"
               :Idea="idea"
             ></Excutedcomponent>
           </div>
@@ -38,13 +37,6 @@ export default {
 
   mounted() {
     this.settingData();
-  },
-
-  props: {
-    csrf: {
-      type: String,
-      required: true,
-    },
   },
 
   methods: {

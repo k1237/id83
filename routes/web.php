@@ -57,11 +57,3 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/delete', [ExcutedController::class, 'delete'])->name('delete');
 });
-
-  // Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-    // Route::get('/memo', [MemoController::class, 'index'])->name('memo');
-
-     // Route::get('/idea', [IdeaController::class, 'index'])->name('idea');
-   // Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
-      // Route::get('/excuted', [ExcutedController::class, 'index'])->name('excuted');

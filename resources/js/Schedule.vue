@@ -9,7 +9,6 @@
               v-for="(idea, index) in ideas"
               v-bind:key="index"
               :Number="index"
-              :CSRF="csrf"
               :Idea="idea"
             ></Schedulecomponent>
           </div>
@@ -40,12 +39,6 @@ export default {
     this.settingData();
   },
 
-  props: {
-    csrf: {
-      type: String,
-      required: true,
-    },
-  },
 
   methods: {
     Idea: async function () {

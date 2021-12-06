@@ -1,33 +1,29 @@
 <template>
-  
-            <form method="post" action="./add" id="valueForm">
-              <input type="hidden" name="_token" v-bind:value="CSRF" />
-              <input type="hidden" name="user_id" v-model="users.id" />
-              <div class="mb-3 d-flex">
-                <input
-                  type="text"
-                  class="form-control col-xs-4"
-                  id="idea_text"
-                  style="width: 80%"
-                  name="idea_text"
-                  v-model="idea"
-                  @change="onChanges"
-                />
-                <button
-                  type="submit"
-                  name="add"
-                  class="btn btn-primary ml-2"
-                  @click="deleteIdea"
-                >
-                  保存
-                </button>
+  <form method="post" action="./add" id="valueForm">
+    <input type="hidden" name="_token" :value="csrf" />
+    <input type="hidden" name="user_id" v-model="users.id" />
+    <div class="mb-3 d-flex">
+      <input
+        type="text"
+        class="form-control col-xs-4"
+        id="idea_text"
+        style="width: 80%"
+        name="idea_text"
+        v-model="idea"
+        @change="onChanges"
+      />
+      <button
+        type="submit"
+        name="add"
+        class="btn btn-primary ml-2"
+        @click="deleteIdea"
+      >
+        保存
+      </button>
 
-                <button @click="deleteIdea" class="btn btn-danger ml-2">
-                  削除
-                </button>
-              </div>
-            </form>
-    
+      <button @click="deleteIdea" class="btn btn-danger ml-2">削除</button>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -37,6 +33,9 @@ export default {
     return {
       idea: "",
       users: [],
+      csrf: document.head.querySelector('meta[name="csrf-token"]')
+        ? document.head.querySelector('meta[name="csrf-token"]').content
+        : "",
     };
   },
 
@@ -52,11 +51,16 @@ export default {
     this.idea = this.Idea; //LSの値をv-modelに代入
   },
 
+  created() {
+    this.settingData();
+    if (!this.csrf) {
+      console.warn(
+        'The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">'
+      );
+    }
+  },
+
   props: {
-    CSRF: {
-      type: String,
-      required: true,
-    },
     Number: Number,
     Idea: String,
   },

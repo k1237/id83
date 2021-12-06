@@ -9,7 +9,6 @@
               v-for="(idea, index) in idea_ar"
               v-bind:key="index"
               :Number="index"
-              :CSRF="csrf"
               :Idea="idea"
               v-on:change-event="changeAction"
               v-on:del-event="delAction"
@@ -46,14 +45,7 @@ export default {
       deep: true,
     },
   },
-
-  props: {
-    csrf: {
-      type: String,
-      required: true,
-    },
-  },
-
+  
   methods: {
     changeAction(Number, idea) {
       this.idea_ar[Number] = idea;

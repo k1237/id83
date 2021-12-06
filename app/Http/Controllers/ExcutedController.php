@@ -30,7 +30,7 @@ class ExcutedController extends Controller
         if($request->has('delete')){
             Idea::where('id',$data['id'])->delete();
         }
-        return redirect()->route('excuted');
+        return redirect('/excuted');
     }
 
 }

@@ -37,7 +37,7 @@ class IdeaController extends Controller
             }else{
                 //空白の場合何もしない
             }
-        return redirect()->route('idea');
+            return redirect('/idea');
     
     }
 }
