@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mx-auto text-center mt-5">
+    <div class="mx-auto text-center mt-5 mb-5">
       <h1 class="mb-5">IdeaList(DB版)</h1>
       <router-link to="/memo">
         <a><button type="button" class="btn btn-success">メモ帳</button></a>
