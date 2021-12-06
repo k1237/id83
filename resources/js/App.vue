@@ -28,10 +28,10 @@
 
     <div class="card-footer text-muted mt-5">
       <div class="w-75 d-flex m-auto justify-content-center">
-        <router-link to="/">
+        <router-link to="/tos">
           <a> 利用規約 </a>
         </router-link>
-        <router-link to="/">
+        <router-link to="/privacy">
           <a class="ml-2"> プライバシー </a>
         </router-link>
         <router-link to="/home">

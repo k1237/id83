@@ -5,9 +5,9 @@
     <div class="mb-3 d-flex col-xs-12">
       <input
         type="text"
-        class="form-control "
+        class="form-control"
         id="idea_text"
-        style="width:80%"
+        style="width: 80%"
         name="idea_text"
         v-model="idea"
         @change="onChanges"
@@ -17,14 +17,14 @@
         type="submit"
         name="add"
         class="btn btn-primary ml-2"
-         
         @click="deleteIdea"
       >
-      ✓
+        ✓
       </button>
 
-      <button @click="deleteIdea" class="btn btn-danger ml-2">×</button>
-      </div>
+      <button type="button" @click="resetIdea" 
+              class="btn btn-danger ml-2">×</button>
+    </div>
   </form>
 </template>
 
@@ -54,7 +54,6 @@ export default {
   },
 
   created() {
-    this.settingData();
     if (!this.csrf) {
       console.warn(
         'The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">'
@@ -88,10 +87,11 @@ export default {
         this.$emit("del-event", this.Number);
       }, 50);
     },
+
+    resetIdea() {
+      this.$emit("del-event", this.Number);
+    },
   },
 };
 </script>
 
-<style scoped>
-
-</style>

@@ -19886,8 +19886,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.idea = this.Idea; //LSの値をv-modelに代入
   },
   created: function created() {
-    this.settingData();
-
     if (!this.csrf) {
       console.warn('The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">');
     }
@@ -19956,6 +19954,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       setTimeout(function () {
         _this2.$emit("del-event", _this2.Number);
       }, 50);
+    },
+    resetIdea: function resetIdea() {
+      this.$emit("del-event", this.Number);
     }
   }
 });
@@ -20351,7 +20352,7 @@ function render(_ctx, _cache) {
     /* STABLE */
 
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/"
+    to: "/tos"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_9];
@@ -20360,7 +20361,7 @@ function render(_ctx, _cache) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/"
+    to: "/privacy"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_10];
@@ -20701,8 +20702,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.deleteIdea && $options.deleteIdea.apply($options, arguments);
     })
   }, " ✓ "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "button",
     onClick: _cache[4] || (_cache[4] = function () {
-      return $options.deleteIdea && $options.deleteIdea.apply($options, arguments);
+      return $options.resetIdea && $options.resetIdea.apply($options, arguments);
     }),
     "class": "btn btn-danger ml-2"
   }, "×")])]);
@@ -20804,6 +20806,37 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PrivacyComponent.vue?vue&type=template&id=e9a61b80&scoped=true":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PrivacyComponent.vue?vue&type=template&id=e9a61b80&scoped=true ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-e9a61b80"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
+
+var _hoisted_1 = {
+  "class": "container"
+};
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row justify-content-center\" data-v-e9a61b80><div class=\"col-md-8\" data-v-e9a61b80><div class=\"card\" data-v-e9a61b80><div class=\"card-header\" data-v-e9a61b80>使用例</div><div class=\"w-90 m-auto\" data-v-e9a61b80><br data-v-e9a61b80><p data-v-e9a61b80> IdeaList（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。 </p><br data-v-e9a61b80><br data-v-e9a61b80><h1 class=\"\" data-v-e9a61b80>第1条（個人情報）</h1><p data-v-e9a61b80> 「個人情報」とは，個人情報保護法にいう「個人情報」を指すものとし，生存する個人に関する情報であって，当該情報に含まれる氏名，生年月日，住所，電話番号，連絡先その他の記述等により特定の個人を識別できる情報及び容貌，指紋，声紋にかかるデータ，及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。 </p><br data-v-e9a61b80><br data-v-e9a61b80><h1 class=\"\" data-v-e9a61b80>第2条（個人情報の収集方法）</h1><p data-v-e9a61b80> 当社は，ユーザーが利用登録をする際に氏名，生年月日，住所，電話番号，メールアドレス，銀行口座番号，クレジットカード番号，運転免許証番号などの個人情報をお尋ねすることがあります。また，ユーザーと提携先などとの間でなされたユーザーの個人情報を含む取引記録や決済に関する情報を,当社の提携先（情報提供元，広告主，広告配信先などを含みます。以下，｢提携先｣といいます。）などから収集することがあります。 </p><br data-v-e9a61b80><br data-v-e9a61b80><h1 class=\"\" data-v-e9a61b80>第3条（個人情報を収集・利用する目的）</h1><p data-v-e9a61b80> 当社が個人情報を収集・利用する目的は，以下のとおりです。<br data-v-e9a61b80><br data-v-e9a61b80> 1.当社サービスの提供・運営のため <br data-v-e9a61b80> 2.ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）<br data-v-e9a61b80> 3.ユーザーが利用中のサービスの新機能，更新情報，キャンペーン等及び当社が提供する他のサービスの案内のメールを送付するため<br data-v-e9a61b80> 4.メンテナンス，重要なお知らせなど必要に応じたご連絡のため<br data-v-e9a61b80> 5.利用規約に違反したユーザーや，不正・不当な目的でサービスを利用しようとするユーザーの特定をし，ご利用をお断りするため<br data-v-e9a61b80> 6.ユーザーにご自身の登録情報の閲覧や変更，削除，ご利用状況の閲覧を行っていただくため<br data-v-e9a61b80> 7.有料サービスにおいて，ユーザーに利用料金を請求するため<br data-v-e9a61b80> 8.上記の利用目的に付随する目的<br data-v-e9a61b80><br data-v-e9a61b80><br data-v-e9a61b80></p><h1 class=\"\" data-v-e9a61b80>第4条（利用目的の変更）</h1><p data-v-e9a61b80> 1.当社は，利用目的が変更前と関連性を有すると合理的に認められる場合に限り，個人情報の利用目的を変更するものとします。 <br data-v-e9a61b80> 2.利用目的の変更を行った場合には，変更後の目的について，当社所定の方法により，ユーザーに通知し，または本ウェブサイト上に公表するものとします。<br data-v-e9a61b80></p><br data-v-e9a61b80><br data-v-e9a61b80><h1 class=\"\" data-v-e9a61b80>第5条（個人情報の第三者提供）</h1><p data-v-e9a61b80> 1.当社は，次に掲げる場合を除いて，あらかじめユーザーの同意を得ることなく，第三者に個人情報を提供することはありません。ただし，個人情報保護法その他の法令で認められる場合を除きます。 <br data-v-e9a61b80><br data-v-e9a61b80> 1.人の生命，身体または財産の保護のために必要がある場合であって，本人の同意を得ることが困難であるとき <br data-v-e9a61b80> 2.公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって，本人の同意を得ることが困難であるとき<br data-v-e9a61b80> 3.国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって，本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき<br data-v-e9a61b80> 4.予め次の事項を告知あるいは公表し，かつ当社が個人情報保護委員会に届出をしたとき<br data-v-e9a61b80><br data-v-e9a61b80> 1.利用目的に第三者への提供を含むこと<br data-v-e9a61b80> 2.第三者に提供されるデータの項目<br data-v-e9a61b80> 3.第三者への提供の手段または方法<br data-v-e9a61b80> 4.本人の求めに応じて個人情報の第三者への提供を停止すること<br data-v-e9a61b80> 5.本人の求めを受け付ける方法<br data-v-e9a61b80><br data-v-e9a61b80> 2.前項の定めにかかわらず，次に掲げる場合には，当該情報の提供先は第三者に該当しないものとします。<br data-v-e9a61b80><br data-v-e9a61b80> 1.当社が利用目的の達成に必要な範囲内において個人情報の取扱いの全部または一部を委託する場合<br data-v-e9a61b80> 2.合併その他の事由による事業の承継に伴って個人情報が提供される場合<br data-v-e9a61b80> 3.個人情報を特定の者との間で共同して利用する場合であって，その旨並びに共同して利用される個人情報の項目，共同して利用する者の範囲，利用する者の利用目的および当該個人情報の管理について責任を有する者の氏名または名称について，あらかじめ本人に通知し，または本人が容易に知り得る状態に置いた場合<br data-v-e9a61b80></p><br data-v-e9a61b80><br data-v-e9a61b80><h1 class=\"\" data-v-e9a61b80>第6条（個人情報の開示）</h1><p data-v-e9a61b80> 1.当社は，本人から個人情報の開示を求められたときは，本人に対し，遅滞なくこれを開示します。ただし，開示することにより次のいずれかに該当する場合は，その全部または一部を開示しないこともあり，開示しない決定をした場合には，その旨を遅滞なく通知します。なお，個人情報の開示に際しては，1件あたり1，000円の手数料を申し受けます。<br data-v-e9a61b80><br data-v-e9a61b80> 1.本人または第三者の生命，身体，財産その他の権利利益を害するおそれがある場合<br data-v-e9a61b80> 2.当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合<br data-v-e9a61b80> 3.その他法令に違反することとなる場合<br data-v-e9a61b80><br data-v-e9a61b80> 2.前項の定めにかかわらず，履歴情報および特性情報などの個人情報以外の情報については，原則として開示いたしません。 </p><br data-v-e9a61b80><br data-v-e9a61b80><h1 class=\"\" data-v-e9a61b80>第7条（個人情報の訂正および削除）</h1><p data-v-e9a61b80> 1.ユーザーは，当社の保有する自己の個人情報が誤った情報である場合には，当社が定める手続きにより，当社に対して個人情報の訂正，追加または削除（以下，「訂正等」といいます。）を請求することができます。<br data-v-e9a61b80> 2.当社は，ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には，遅滞なく，当該個人情報の訂正等を行うものとします。<br data-v-e9a61b80> 3.当社は，前項の規定に基づき訂正等を行った場合，または訂正等を行わない旨の決定をしたときは遅滞なく，これをユーザーに通知します。<br data-v-e9a61b80></p><br data-v-e9a61b80><br data-v-e9a61b80><h1 class=\"\" data-v-e9a61b80>第8条（個人情報の利用停止等）</h1><p data-v-e9a61b80> 1.当社は，本人から，個人情報が，利用目的の範囲を超えて取り扱われているという理由，または不正の手段により取得されたものであるという理由により，その利用の停止または消去（以下，「利用停止等」といいます。）を求められた場合には，遅滞なく必要な調査を行います。<br data-v-e9a61b80> 2.前項の調査結果に基づき，その請求に応じる必要があると判断した場合には，遅滞なく，当該個人情報の利用停止等を行います。<br data-v-e9a61b80> 3.当社は，前項の規定に基づき利用停止等を行った場合，または利用停止等を行わない旨の決定をしたときは，遅滞なく，これをユーザーに通知します。<br data-v-e9a61b80> 4.前2項にかかわらず，利用停止等に多額の費用を有する場合その他利用停止等を行うことが困難な場合であって，ユーザーの権利利益を保護するために必要なこれに代わるべき措置をとれる場合は，この代替策を講じるものとします </p><br data-v-e9a61b80><br data-v-e9a61b80><h1 class=\"\" data-v-e9a61b80>第9条（プライバシーポリシーの変更）</h1><p data-v-e9a61b80> 1.本ポリシーの内容は，法令その他本ポリシーに別段の定めのある事項を除いて，ユーザーに通知することなく，変更することができるものとします。<br data-v-e9a61b80> 2.当社が別途定める場合を除いて，変更後のプライバシーポリシーは，本ウェブサイトに掲載したときから効力を生じるものとします。<br data-v-e9a61b80></p><br data-v-e9a61b80><br data-v-e9a61b80><h1 class=\"\" data-v-e9a61b80>第10条（お問い合わせ窓口）</h1><p data-v-e9a61b80> 本ポリシーに関するお問い合わせは，下記の窓口までお願いいたします。 <br data-v-e9a61b80> 氏名：K<br data-v-e9a61b80> Eメールアドレス：k-programing1237@outlook.jp<br data-v-e9a61b80></p><br data-v-e9a61b80><p data-v-e9a61b80>以上</p></div></div></div></div>", 1);
+
+var _hoisted_3 = [_hoisted_2];
+function render(_ctx, _cache) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ScheduleComponent.vue?vue&type=template&id=6f02ee4b":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/ScheduleComponent.vue?vue&type=template&id=6f02ee4b ***!
@@ -20879,6 +20912,37 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.value]]), _hoisted_4, _hoisted_5])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TosComponent.vue?vue&type=template&id=ba03b020&scoped=true":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TosComponent.vue?vue&type=template&id=ba03b020&scoped=true ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-ba03b020"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
+
+var _hoisted_1 = {
+  "class": "container"
+};
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row justify-content-center\" data-v-ba03b020><div class=\"col-md-8\" data-v-ba03b020><div class=\"card\" data-v-ba03b020><div class=\"card-header\" data-v-ba03b020>使用例</div><div class=\"w-90 m-auto\" data-v-ba03b020><br data-v-ba03b020><p data-v-ba03b020> この利用規約（以下，「本規約」といいます。）は，IdeaList（以下，「当社」といいます。）がこのウェブサイト上で提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第1条（適用）</h1><p data-v-ba03b020> 1.本規約は，ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。<br data-v-ba03b020> 2.当社は本サービスに関し，本規約のほか，ご利用にあたってのルール等，各種の定め（以下，「個別規定」といいます。）をすることがあります。これら個別規定はその名称のいかんに関わらず，本規約の一部を構成するものとします。<br data-v-ba03b020> 3.本規約の規定が前条の個別規定の規定と矛盾する場合には，個別規定において特段の定めなき限り，個別規定の規定が優先されるものとします。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第2条（利用登録）</h1><p data-v-ba03b020> 1.本サービスにおいては，登録希望者が本規約に同意の上，当社の定める方法によって利用登録を申請し，当社がこれを承認することによって，利用登録が完了するものとします。<br data-v-ba03b020> 2.当社は，利用登録の申請者に以下の事由があると判断した場合，利用登録の申請を承認しないことがあり，その理由については一切の開示義務を負わないものとします。<br data-v-ba03b020> 1.利用登録の申請に際して虚偽の事項を届け出た場合<br data-v-ba03b020> 2.本規約に違反したことがある者からの申請である場合<br data-v-ba03b020> 3.その他，当社が利用登録を相当でないと判断した場合<br data-v-ba03b020></p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第3条（ユーザーIDおよびパスワードの管理）</h1><p data-v-ba03b020> 1.ユーザーは，自己の責任において，本サービスのユーザーIDおよびパスワードを適切に管理するものとします。<br data-v-ba03b020> 2.ユーザーは，いかなる場合にも，ユーザーIDおよびパスワードを第三者に譲渡または貸与し，もしくは第三者と共用することはできません。当社は，ユーザーIDとパスワードの組み合わせが登録情報と一致してログインされた場合には，そのユーザーIDを登録しているユーザー自身による利用とみなします。<br data-v-ba03b020> 3.ユーザーID及びパスワードが第三者によって使用されたことによって生じた損害は，当社に故意又は重大な過失がある場合を除き，当社は一切の責任を負わないものとします。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第4条（利用料金および支払方法）</h1><p data-v-ba03b020> 1.本規約は，ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。<br data-v-ba03b020> 2.ユーザーが利用料金の支払を遅滞した場合には，ユーザーは年14．6％の割合による遅延損害金を支払うものとします。<br data-v-ba03b020></p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第5条（禁止事項）</h1><p data-v-ba03b020> 1.法令または公序良俗に違反する行為。<br data-v-ba03b020> 2.犯罪行為に関連する行為。<br data-v-ba03b020> 3.本サービスの内容等，本サービスに含まれる著作権，商標権ほか知的財産権を侵害する行為。<br data-v-ba03b020> 4.当社，ほかのユーザー，またはその他第三者のサーバーまたはネットワークの機能を破壊したり，妨害したりする行為。<br data-v-ba03b020> 5.本サービスによって得られた情報を商業的に利用する行為。<br data-v-ba03b020> 6.当社のサービスの運営を妨害するおそれのある行為。<br data-v-ba03b020> 7.不正アクセスをし，またはこれを試みる行為。<br data-v-ba03b020> 8.他のユーザーに関する個人情報等を収集または蓄積する行為。<br data-v-ba03b020> 9.不正な目的を持って本サービスを利用する行為。<br data-v-ba03b020> 10.本サービスの他のユーザーまたはその他の第三者に不利益，損害，不快感を与える行為。<br data-v-ba03b020> 11.他のユーザーに成りすます行為。<br data-v-ba03b020> 12.当社が許諾しない本サービス上での宣伝，広告，勧誘，または営業行為。<br data-v-ba03b020> 13.面識のない異性との出会いを目的とした行為。<br data-v-ba03b020> 14.当社のサービスに関連して，反社会的勢力に対して直接または間接に利益を供与する行為。<br data-v-ba03b020> 15.その他，当社が不適切と判断する行為。<br data-v-ba03b020></p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第6条（本サービスの提供の停止等）</h1><p data-v-ba03b020> 1.当社は，以下のいずれかの事由があると判断した場合，ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。 <br data-v-ba03b020><br data-v-ba03b020> 1.本サービスにかかるコンピュータシステムの保守点検または更新を行う場合<br data-v-ba03b020> 2.地震，落雷，火災，停電または天災などの不可抗力により，本サービスの提供が困難となった場合<br data-v-ba03b020> 3.コンピュータまたは通信回線等が事故により停止した場合 <br data-v-ba03b020><br data-v-ba03b020> 2.当社は，本サービスの提供の停止または中断により，ユーザーまたは第三者が被ったいかなる不利益または損害についても，一切の責任を負わないものとします。<br data-v-ba03b020></p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第7条（利用制限および登録抹消）</h1><p data-v-ba03b020> 1.当社は，ユーザーが以下のいずれかに該当する場合には，事前の通知なく，ユーザーに対して，本サービスの全部もしくは一部の利用を制限し，またはユーザーとしての登録を抹消することができるものとします。 <br data-v-ba03b020><br data-v-ba03b020> 1.本規約のいずれかの条項に違反した場合<br data-v-ba03b020> 2.登録事項に虚偽の事実があることが判明した場合<br data-v-ba03b020> 3.料金等の支払債務の不履行があった場合<br data-v-ba03b020> 4.当社からの連絡に対し，一定期間返答がない場合<br data-v-ba03b020> 5.本サービスについて，最終の利用から一定期間利用がない場合<br data-v-ba03b020> 6.その他，当社が本サービスの利用を適当でないと判断した場合 <br data-v-ba03b020><br data-v-ba03b020> 2.当社は，本条に基づき当社が行った行為によりユーザーに生じた損害について，一切の責任を負いません。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第8条（退会）</h1><p data-v-ba03b020> ユーザーは，当社の定める退会手続により，本サービスから退会できるものとします。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第9条（保証の否認および免責事項）</h1><p data-v-ba03b020> 1.当社は，本サービスに事実上または法律上の瑕疵（安全性，信頼性，正確性，完全性，有効性，特定の目的への適合性，セキュリティなどに関する欠陥，エラーやバグ，権利侵害などを含みます。）がないことを明示的にも黙示的にも保証しておりません。<br data-v-ba03b020><br data-v-ba03b020> 2.当社は，本サービスに起因してユーザーに生じたあらゆる損害について一切の責任を負いません。ただし，本サービスに関する当社とユーザーとの間の契約（本規約を含みます。）が消費者契約法に定める消費者契約となる場合，この免責規定は適用されません。<br data-v-ba03b020><br data-v-ba03b020> 3.前項ただし書に定める場合であっても，当社は，当社の過失（重過失を除きます。）による債務不履行または不法行為によりユーザーに生じた損害のうち特別な事情から生じた損害（当社またはユーザーが損害発生につき予見し，または予見し得た場合を含みます。）について一切の責任を負いません。また，当社の過失（重過失を除きます。）による債務不履行または不法行為によりユーザーに生じた損害の賠償は，ユーザーから当該損害が発生した月に受領した利用料の額を上限とします。<br data-v-ba03b020><br data-v-ba03b020> 4.当社は，本サービスに関して，ユーザーと他のユーザーまたは第三者との間において生じた取引，連絡または紛争等について一切責任を負いません。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第10条（サービス内容の変更等）</h1><p data-v-ba03b020> 当社は，ユーザーに通知することなく，本サービスの内容を変更しまたは本サービスの提供を中止することができるものとし，これによってユーザーに生じた損害について一切の責任を負いません。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第11条（利用規約の変更）</h1><p data-v-ba03b020> 当社は，必要と判断した場合には，ユーザーに通知することなくいつでも本規約を変更することができるものとします。なお，本規約の変更後，本サービスの利用を開始した場合には，当該ユーザーは変更後の規約に同意したものとみなします。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第12条（個人情報の取扱い）</h1><p data-v-ba03b020> 当社は，本サービスの利用によって取得する個人情報については，当社「プライバシーポリシー」に従い適切に取り扱うものとします。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第13条（通知または連絡）</h1><p data-v-ba03b020> ユーザーと当社との間の通知または連絡は，当社の定める方法によって行うものとします。当社は,ユーザーから,当社が別途定める方式に従った変更届け出がない限り,現在登録されている連絡先が有効なものとみなして当該連絡先へ通知または連絡を行い,これらは,発信時にユーザーへ到達したものとみなします。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第14条（権利義務の譲渡の禁止）</h1><p data-v-ba03b020> ユーザーは，当社の書面による事前の承諾なく，利用契約上の地位または本規約に基づく権利もしくは義務を第三者に譲渡し，または担保に供することはできません。 </p><br data-v-ba03b020><br data-v-ba03b020><h1 class=\"\" data-v-ba03b020>第15条（準拠法・裁判管轄）</h1><p data-v-ba03b020> 1.本規約の解釈にあたっては，日本法を準拠法とします。<br data-v-ba03b020> 2.本サービスに関して紛争が生じた場合には，当社の本店所在地を管轄する裁判所を専属的合意管轄とします。 </p><br data-v-ba03b020><br data-v-ba03b020><p data-v-ba03b020>以上</p></div></div></div></div>", 1);
+
+var _hoisted_3 = [_hoisted_2];
+function render(_ctx, _cache) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
 }
 
 /***/ }),
@@ -20989,20 +21053,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "router": () => (/* binding */ router)
 /* harmony export */ });
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _components_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/HomeComponent.vue */ "./resources/js/components/HomeComponent.vue");
 /* harmony import */ var _components_MemoComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MemoComponent.vue */ "./resources/js/components/MemoComponent.vue");
 /* harmony import */ var _Idea_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Idea.vue */ "./resources/js/Idea.vue");
 /* harmony import */ var _Schedule_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Schedule.vue */ "./resources/js/Schedule.vue");
 /* harmony import */ var _Excuted_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Excuted.vue */ "./resources/js/Excuted.vue");
+/* harmony import */ var _components_TosComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/TosComponent.vue */ "./resources/js/components/TosComponent.vue");
+/* harmony import */ var _components_PrivacyComponent_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/PrivacyComponent.vue */ "./resources/js/components/PrivacyComponent.vue");
 
 
 
 
 
 
-var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_5__.createRouter)({
-  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_5__.createWebHistory)(),
+
+
+var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_7__.createRouter)({
+  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_7__.createWebHistory)(),
   routes: [{
     path: '/home',
     name: 'home',
@@ -21023,6 +21091,14 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_5__.createRouter)({
     path: '/excuted',
     name: 'excuted',
     component: _Excuted_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, {
+    path: '/tos',
+    name: 'tos',
+    component: _components_TosComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }, {
+    path: '/privacy',
+    name: 'privacy',
+    component: _components_PrivacyComponent_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 });
 
@@ -25412,6 +25488,54 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\na[data-v-f348271a]{\n  text-decoration:underline;\n}\n.m-auto[data-v-f348271a] {\n  margin: 0 auto;\n}\n.text-mode[data-v-f348271a] {\n  -ms-writing-mode: tb-rl;\n      writing-mode: vertical-rl;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.w-90[data-v-e9a61b80] {\n  width: 90%;\n}\n.m-auto[data-v-e9a61b80] {\n  margin: auto;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.w-90[data-v-ba03b020]{\n    width:90%;\n}\n.m-auto[data-v-ba03b020]{\n    margin:auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -57230,6 +57354,66 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PrivacyComponent_vue_vue_type_style_index_0_id_e9a61b80_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PrivacyComponent_vue_vue_type_style_index_0_id_e9a61b80_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PrivacyComponent_vue_vue_type_style_index_0_id_e9a61b80_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TosComponent_vue_vue_type_style_index_0_id_ba03b020_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TosComponent_vue_vue_type_style_index_0_id_ba03b020_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TosComponent_vue_vue_type_style_index_0_id_ba03b020_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -57754,6 +57938,35 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/components/PrivacyComponent.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/PrivacyComponent.vue ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _PrivacyComponent_vue_vue_type_template_id_e9a61b80_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PrivacyComponent.vue?vue&type=template&id=e9a61b80&scoped=true */ "./resources/js/components/PrivacyComponent.vue?vue&type=template&id=e9a61b80&scoped=true");
+/* harmony import */ var _PrivacyComponent_vue_vue_type_style_index_0_id_e9a61b80_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css */ "./resources/js/components/PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css");
+/* harmony import */ var _home_itsys_id83_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+const script = {}
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_home_itsys_id83_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(script, [['render',_PrivacyComponent_vue_vue_type_template_id_e9a61b80_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-e9a61b80"],['__file',"resources/js/components/PrivacyComponent.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/ScheduleComponent.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/components/ScheduleComponent.vue ***!
@@ -57774,6 +57987,35 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_home_itsys_id83_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ScheduleComponent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ScheduleComponent_vue_vue_type_template_id_6f02ee4b__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/ScheduleComponent.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/TosComponent.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/TosComponent.vue ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _TosComponent_vue_vue_type_template_id_ba03b020_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TosComponent.vue?vue&type=template&id=ba03b020&scoped=true */ "./resources/js/components/TosComponent.vue?vue&type=template&id=ba03b020&scoped=true");
+/* harmony import */ var _TosComponent_vue_vue_type_style_index_0_id_ba03b020_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css */ "./resources/js/components/TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css");
+/* harmony import */ var _home_itsys_id83_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+const script = {}
+
+;
+
+
+const __exports__ = /*#__PURE__*/(0,_home_itsys_id83_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(script, [['render',_TosComponent_vue_vue_type_template_id_ba03b020_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-ba03b020"],['__file',"resources/js/components/TosComponent.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -58022,6 +58264,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/PrivacyComponent.vue?vue&type=template&id=e9a61b80&scoped=true":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/PrivacyComponent.vue?vue&type=template&id=e9a61b80&scoped=true ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PrivacyComponent_vue_vue_type_template_id_e9a61b80_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PrivacyComponent_vue_vue_type_template_id_e9a61b80_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./PrivacyComponent.vue?vue&type=template&id=e9a61b80&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PrivacyComponent.vue?vue&type=template&id=e9a61b80&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/ScheduleComponent.vue?vue&type=template&id=6f02ee4b":
 /*!*************************************************************************************!*\
   !*** ./resources/js/components/ScheduleComponent.vue?vue&type=template&id=6f02ee4b ***!
@@ -58038,6 +58296,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/TosComponent.vue?vue&type=template&id=ba03b020&scoped=true":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/TosComponent.vue?vue&type=template&id=ba03b020&scoped=true ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TosComponent_vue_vue_type_template_id_ba03b020_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TosComponent_vue_vue_type_template_id_ba03b020_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TosComponent.vue?vue&type=template&id=ba03b020&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TosComponent.vue?vue&type=template&id=ba03b020&scoped=true");
+
+
+/***/ }),
+
 /***/ "./resources/js/App.vue?vue&type=style&index=0&id=f348271a&scoped=true&lang=css":
 /*!**************************************************************************************!*\
   !*** ./resources/js/App.vue?vue&type=style&index=0&id=f348271a&scoped=true&lang=css ***!
@@ -58047,6 +58321,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_App_vue_vue_type_style_index_0_id_f348271a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/style-loader/dist/cjs.js!../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../node_modules/vue-loader/dist/stylePostLoader.js!../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./App.vue?vue&type=style&index=0&id=f348271a&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=style&index=0&id=f348271a&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/components/PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css ***!
+  \**************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_PrivacyComponent_vue_vue_type_style_index_0_id_e9a61b80_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/PrivacyComponent.vue?vue&type=style&index=0&id=e9a61b80&scoped=true&lang=css");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/components/TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css ***!
+  \**********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TosComponent_vue_vue_type_style_index_0_id_ba03b020_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TosComponent.vue?vue&type=style&index=0&id=ba03b020&scoped=true&lang=css");
 
 
 /***/ }),
