@@ -14,10 +14,10 @@
         readonly
       />
       <button type="submit" name="store" class="btn btn-primary ml-2">
-        実行
+        ✓
       </button>
       <button type="submit" name="delete" class="btn btn-danger ml-2">
-        削除
+        ×
       </button>
     </div>
   </form>

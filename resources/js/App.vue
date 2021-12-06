@@ -22,13 +22,36 @@
       <router-link to="/excuted">
         <a><button type="button" class="btn btn-danger ml-2">実行済</button></a>
       </router-link>
-      <router-link to="/home">
-        <a><button type="button" class="btn btn-dark ml-2">使用方法</button></a>
-      </router-link>
     </div>
 
     <router-view />
+
+    <div class="card-footer text-muted mt-5">
+      <div class="w-75 d-flex m-auto justify-content-center">
+        <router-link to="/">
+          <a> 利用規約 </a>
+        </router-link>
+        <router-link to="/">
+          <a class="ml-2"> プライバシー </a>
+        </router-link>
+        <router-link to="/home">
+          <a class="ml-2"> 使用方法 </a>
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
+<style scoped>
+a{
+  text-decoration:underline;
+}
+.m-auto {
+  margin: 0 auto;
+}
+
+.text-mode {
+  writing-mode: vertical-rl;
+}
+</style>
 

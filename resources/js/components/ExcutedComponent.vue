@@ -13,7 +13,7 @@
         readonly
       />
       <button type="submit" name="delete" class="btn btn-danger ml-2">
-        削除
+        ×
       </button>
     </div>
   </form>

@@ -2,27 +2,29 @@
   <form method="post" action="./add" id="valueForm">
     <input type="hidden" name="_token" :value="csrf" />
     <input type="hidden" name="user_id" v-model="users.id" />
-    <div class="mb-3 d-flex">
+    <div class="mb-3 d-flex col-xs-12">
       <input
         type="text"
-        class="form-control col-xs-4"
+        class="form-control "
         id="idea_text"
-        style="width: 80%"
+        style="width:80%"
         name="idea_text"
         v-model="idea"
         @change="onChanges"
       />
+
       <button
         type="submit"
         name="add"
         class="btn btn-primary ml-2"
+         
         @click="deleteIdea"
       >
-        保存
+      ✓
       </button>
 
-      <button @click="deleteIdea" class="btn btn-danger ml-2">削除</button>
-    </div>
+      <button @click="deleteIdea" class="btn btn-danger ml-2">×</button>
+      </div>
   </form>
 </template>
 
@@ -89,3 +91,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-sm">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -81,6 +81,7 @@ export default {
     },
 
     methods: {
+        //エラー処理追記必要
         User: async function () {
             await axios
                 .get("http://127.0.0.1:8000/api/profile")
