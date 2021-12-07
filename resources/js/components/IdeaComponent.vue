@@ -2,6 +2,10 @@
   <form method="post" action="./add" id="valueForm">
     <input type="hidden" name="_token" :value="csrf" />
     <input type="hidden" name="user_id" v-model="users.id" />
+
+    <div class="text-danger text-left" v-if="erMessage">
+      ※20文字以内で入力してください
+    </div>
     <div class="mb-3 d-flex col-xs-12">
       <input
         type="text"
@@ -18,12 +22,14 @@
         name="add"
         class="btn btn-primary ml-2"
         @click="deleteIdea"
+        :disabled="!canSubmit"
       >
         ✓
       </button>
 
-      <button type="button" @click="resetIdea" 
-              class="btn btn-danger ml-2">×</button>
+      <button type="button" @click="resetIdea" class="btn btn-danger ml-2">
+        ×
+      </button>
     </div>
   </form>
 </template>
@@ -39,6 +45,15 @@ export default {
         ? document.head.querySelector('meta[name="csrf-token"]').content
         : "",
     };
+  },
+
+  computed: {
+    erMessage: function () {
+      return this.idea.length > 20;
+    },
+    canSubmit: function () {
+      return this.idea !== "" && this.idea.length < 20;
+    },
   },
 
   watch: {
@@ -95,3 +110,8 @@ export default {
 };
 </script>
 
+<style scoped>
+.m-3 {
+  margin-top: -5%;
+}
+</style>

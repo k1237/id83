@@ -22,11 +22,11 @@ class IdeaController extends Controller
         $data = $request -> all();
         // dd($data);
         
-        // $validate_rule=[
-        //     'user_id' =>'required',
-        //     'idea_text' => 'required|max:20',
-        //  ];
-        // $this->validate($request,$validate_rule);
+        $validate_rule=[
+            'user_id' =>'required',
+            'idea_text' => 'required|max:20',
+         ];
+        $this->validate($request,$validate_rule);
 
         if($data['idea_text']!=""&&$request->has('add')){//ログインユーザーメモ新規登録
                Idea::insertGetId([
@@ -37,7 +37,7 @@ class IdeaController extends Controller
             }else{
                 //空白の場合何もしない
             }
-            return redirect('/idea');
+       return redirect('/idea');
     
     }
 }
