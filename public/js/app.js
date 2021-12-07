@@ -19773,7 +19773,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       value: "",
       users: [],
       id: "",
-      csrf: document.head.querySelector('meta[name="csrf-token"]') ? document.head.querySelector('meta[name="csrf-token"]').content : ""
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
   mounted: function mounted() {
@@ -19872,7 +19872,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       idea: "",
       users: [],
-      csrf: document.head.querySelector('meta[name="csrf-token"]') ? document.head.querySelector('meta[name="csrf-token"]').content : ""
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
   computed: {
@@ -19999,7 +19999,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       users: [],
       memo: "",
       init: "",
-      csrf: document.head.querySelector('meta[name="csrf-token"]') ? document.head.querySelector('meta[name="csrf-token"]').content : ""
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
   created: function created() {
@@ -20151,7 +20151,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       value: "",
       users: [],
       id: "",
-      csrf: document.head.querySelector('meta[name="csrf-token"]') ? document.head.querySelector('meta[name="csrf-token"]').content : ""
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
   mounted: function mounted() {
@@ -21008,14 +21008,6 @@ app.mount('#app'); // import Vue from 'vue';
 // // app.component('schedule-component', ScheduleComponent);
 // // app.component('excuted', Excuted);
 // // app.component('excuted-component', ExcutedComponent);
-// import VueRouter from 'vue-router';
-// import router from "./routes/router";
-// window.Vue = Vue 
-// Vue.use(VueRouter);
-// const app = new Vue({
-//     el: '#app',
-//     router: new VueRouter(router)
-// });
 
 /***/ }),
 

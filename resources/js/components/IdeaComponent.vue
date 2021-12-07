@@ -41,9 +41,7 @@ export default {
     return {
       idea: "",
       users: [],
-      csrf: document.head.querySelector('meta[name="csrf-token"]')
-        ? document.head.querySelector('meta[name="csrf-token"]').content
-        : "",
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
 

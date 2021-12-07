@@ -58,9 +58,7 @@ export default {
             users: [],
             memo: "",
             init: "",
-            csrf: document.head.querySelector('meta[name="csrf-token"]')
-                ? document.head.querySelector('meta[name="csrf-token"]').content
-                : "",
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         };
     },
 

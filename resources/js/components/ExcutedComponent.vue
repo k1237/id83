@@ -27,9 +27,7 @@ export default {
       value: "",
       users: [],
       id: "",
-      csrf: document.head.querySelector('meta[name="csrf-token"]')
-        ? document.head.querySelector('meta[name="csrf-token"]').content
-        : "",
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
 
@@ -61,3 +59,4 @@ export default {
   },
 };
 </script>
+
