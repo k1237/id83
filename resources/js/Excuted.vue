@@ -6,7 +6,7 @@
           <div class="card-header">実行したアイデア</div>
           <div class="card-body">
             <Excutedcomponent
-              v-for="(idea, index) in ideas"
+              v-for="(idea, index) in data.ideas"
               v-bind:key="index"
               :Number="index"
               :Idea="idea"
@@ -21,33 +21,33 @@
 <script>
 import Excutedcomponent from "./components/ExcutedComponent.vue";
 import axios from "axios";
+import { defineComponent, reactive, onMounted } from "vue";
 
-export default {
-  name: "App",
-
+export default defineComponent({
   components: {
     Excutedcomponent,
   },
 
-  data() {
-    return {
+  setup: () => {
+    const data = reactive({
       ideas: [],
-    };
-  },
+    });
 
-  mounted() {
-    this.settingData();
-  },
+    onMounted(() => {
+      settingData();
+    });
 
-  methods: {
-    Idea2: async function () {
+    const Idea2 = async function () {
       await axios.get("http://127.0.0.1:8000/api/idea2").then((response) => {
-        this.ideas = response.data;
+        data.ideas = response.data;
       });
-    },
-    settingData: async function () {
-      await this.Idea2();
-    },
+    };
+
+    const settingData = async function () {
+      await Idea2();
+    };
+
+    return { data, onMounted, settingData };
   },
-};
+});
 </script>
