@@ -20144,6 +20144,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -20151,40 +20152,38 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  data: function data() {
-    return {
-      value: "",
-      users: [],
-      id: "",
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-    };
-  },
-  mounted: function mounted() {
-    this.settingData();
-    this.value = this.Idea.idea;
-    this.id = this.Idea.id;
 
-    if (!this.csrf) {
-      console.warn('The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">');
-    }
-  },
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_2__.defineComponent)({
   props: {
     Number: Number,
     Idea: Object
   },
-  methods: {
-    User: function () {
-      var _User = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var _this = this;
+  setup: function setup(props) {
+    var data = (0,vue__WEBPACK_IMPORTED_MODULE_2__.reactive)({
+      value: "",
+      users: [],
+      id: "",
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+    });
+    (0,vue__WEBPACK_IMPORTED_MODULE_2__.onMounted)(function () {
+      settingData();
+      data.value = props.Idea.idea;
+      data.id = props.Idea.id;
 
+      if (!data.csrf) {
+        console.warn('The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">');
+      }
+    });
+
+    var User = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/profile").then(function (response) {
-                  _this.users = response.data;
+                  data.users = response.data;
                 });
 
               case 2:
@@ -20195,37 +20194,41 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }));
 
-      function User() {
-        return _User.apply(this, arguments);
-      }
+      return function User() {
+        return _ref.apply(this, arguments);
+      };
+    }();
 
-      return User;
-    }(),
-    settingData: function () {
-      var _settingData = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+    var settingData = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return this.User();
+                return User();
 
               case 2:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee2);
       }));
 
-      function settingData() {
-        return _settingData.apply(this, arguments);
-      }
+      return function settingData() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
 
-      return settingData;
-    }()
+    return {
+      data: data,
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_2__.onMounted,
+      User: User,
+      settingData: settingData
+    };
   }
-});
+}));
 
 /***/ }),
 
@@ -20890,7 +20893,7 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   type: "submit",
   name: "store",
   "class": "btn btn-primary ml-2"
-}, " ✓ ", -1
+}, "✓", -1
 /* HOISTED */
 );
 
@@ -20898,7 +20901,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   type: "submit",
   name: "delete",
   "class": "btn btn-danger ml-2"
-}, " × ", -1
+}, "×", -1
 /* HOISTED */
 );
 
@@ -20906,26 +20909,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     name: "_token",
-    value: $data.csrf
+    value: _ctx.data.csrf
   }, null, 8
   /* PROPS */
   , _hoisted_2), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     name: "id",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $data.id = $event;
+      return _ctx.data.id = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.data.id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     name: "user_id",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $data.users.id = $event;
+      return _ctx.data.users.id = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.users.id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.data.users.id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control col-xs-4",
     name: "idea_text",
@@ -20933,12 +20936,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "width": "80%"
     },
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $data.value = $event;
+      return _ctx.data.value = $event;
     }),
     readonly: ""
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.value]]), _hoisted_4, _hoisted_5])]);
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.data.value]]), _hoisted_4, _hoisted_5])]);
 }
 
 /***/ }),
