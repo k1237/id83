@@ -28,7 +28,6 @@ export default defineComponent({
   },
 
   setup: (props) => {
-    //data
     const data = reactive({
       value: "",
       users: [],
@@ -38,7 +37,6 @@ export default defineComponent({
         .getAttribute("content"),
     });
 
-    //mounted
     onMounted(() => {
       settingData();
       data.value = props.Idea.idea;
@@ -50,7 +48,6 @@ export default defineComponent({
       }
     });
 
-    //methods
     const User = async function () {
       await axios.get("http://127.0.0.1:8000/api/profile").then((response) => {
         data.users = response.data;
