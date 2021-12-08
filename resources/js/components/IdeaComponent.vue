@@ -1,7 +1,7 @@
 <template>
   <form method="post" action="./add" id="valueForm">
-    <input type="hidden" name="_token" :value="csrf" />
-    <input type="hidden" name="user_id" v-model="users.id" />
+    <input type="hidden" name="_token" :value="data.csrf" />
+    <input type="hidden" name="user_id" v-model="data.users.id" />
 
     <div class="text-danger text-left" v-if="erMessage">
       ※20文字以内で入力してください
@@ -13,7 +13,7 @@
         id="idea_text"
         style="width: 80%"
         name="idea_text"
-        v-model="idea"
+        v-model="data.idea"
         @change="onChanges"
       />
 
@@ -36,76 +36,75 @@
 
 <script>
 import axios from "axios";
-export default {
-  data() {
-    return {
-      idea: "",
-      users: [],
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-    };
-  },
+import {
+  defineComponent,
+  reactive,
+  toRefs,
+  watch,
+  computed,
+  onMounted,
+} from "vue";
 
-  computed: {
-    erMessage: function () {
-      return this.idea.length > 20;
-    },
-    canSubmit: function () {
-      return this.idea !== "" && this.idea.length < 20;
-    },
-  },
-
-  watch: {
-    //アイデア欄の削除ボタン
-    Idea: function (newIdea) {
-      this.idea = newIdea;
-    },
-  },
-
-  mounted() {
-    this.settingData();
-    this.idea = this.Idea; //LSの値をv-modelに代入
-  },
-
-  created() {
-    if (!this.csrf) {
-      console.warn(
-        'The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">'
-      );
-    }
-  },
-
+export default defineComponent({
   props: {
     Number: Number,
     Idea: String,
   },
 
-  methods: {
-    User: async function () {
+  setup: (props,context) => {
+    const data = reactive({
+      idea: "",
+      users: [],
+      csrf: document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content"),
+    });
+
+    const erMessage = computed(() => data.idea.length > 20);
+    const canSubmit = computed(() => data.idea !== "" && data.idea.length < 20);
+
+    const { Idea } = toRefs(props);
+    watch(Idea, (newIdea) => {
+      data.idea = newIdea;
+    });
+
+    onMounted(() => {
+      settingData();
+      data.idea = props.Idea; //LSの値をv-modelに代入
+      if (!data.csrf) {
+        console.warn(
+          'The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">'
+        );
+      }
+    });
+
+    const User = async function () {
       await axios.get("http://127.0.0.1:8000/api/profile").then((response) => {
-        this.users = response.data;
+        data.users = response.data;
       });
-    },
+    }
 
-    settingData: async function () {
-      await this.User();
-    },
+    const settingData = async function () {
+      await User();
+    }
 
-    onChanges() {
-      this.$emit("change-event", this.Number, this.idea);
-      // document.getElementById("valueForm").submit()
-    },
+    const onChanges = () => {
+      context.emit("change-event", props.Number, data.idea);
+    }
 
-    deleteIdea() {
+    const deleteIdea = () => {
       setTimeout(() => {
-        this.$emit("del-event", this.Number);
+        context.emit("del-event", props.Number);
       }, 50);
-    },
+    }
 
-    resetIdea() {
-      this.$emit("del-event", this.Number);
-    },
+    const resetIdea =() => {
+     context.emit("del-event", props.Number);
+    }
+
+    return { data, erMessage, canSubmit ,onMounted,User,settingData,onChanges,deleteIdea,resetIdea};
   },
-};
+});
 </script>
 
 <style scoped>

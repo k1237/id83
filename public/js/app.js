@@ -19866,6 +19866,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -19873,53 +19874,49 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  data: function data() {
-    return {
-      idea: "",
-      users: [],
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-    };
-  },
-  computed: {
-    erMessage: function erMessage() {
-      return this.idea.length > 20;
-    },
-    canSubmit: function canSubmit() {
-      return this.idea !== "" && this.idea.length < 20;
-    }
-  },
-  watch: {
-    //アイデア欄の削除ボタン
-    Idea: function Idea(newIdea) {
-      this.idea = newIdea;
-    }
-  },
-  mounted: function mounted() {
-    this.settingData();
-    this.idea = this.Idea; //LSの値をv-modelに代入
-  },
-  created: function created() {
-    if (!this.csrf) {
-      console.warn('The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">');
-    }
-  },
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_2__.defineComponent)({
   props: {
     Number: Number,
     Idea: String
   },
-  methods: {
-    User: function () {
-      var _User = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var _this = this;
+  setup: function setup(props, context) {
+    var data = (0,vue__WEBPACK_IMPORTED_MODULE_2__.reactive)({
+      idea: "",
+      users: [],
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content")
+    });
+    var erMessage = (0,vue__WEBPACK_IMPORTED_MODULE_2__.computed)(function () {
+      return data.idea.length > 20;
+    });
+    var canSubmit = (0,vue__WEBPACK_IMPORTED_MODULE_2__.computed)(function () {
+      return data.idea !== "" && data.idea.length < 20;
+    });
 
+    var _toRefs = (0,vue__WEBPACK_IMPORTED_MODULE_2__.toRefs)(props),
+        Idea = _toRefs.Idea;
+
+    (0,vue__WEBPACK_IMPORTED_MODULE_2__.watch)(Idea, function (newIdea) {
+      data.idea = newIdea;
+    });
+    (0,vue__WEBPACK_IMPORTED_MODULE_2__.onMounted)(function () {
+      settingData();
+      data.idea = props.Idea; //LSの値をv-modelに代入
+
+      if (!data.csrf) {
+        console.warn('The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">');
+      }
+    });
+
+    var User = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/profile").then(function (response) {
-                  _this.users = response.data;
+                  data.users = response.data;
                 });
 
               case 2:
@@ -19930,50 +19927,60 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }));
 
-      function User() {
-        return _User.apply(this, arguments);
-      }
+      return function User() {
+        return _ref.apply(this, arguments);
+      };
+    }();
 
-      return User;
-    }(),
-    settingData: function () {
-      var _settingData = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+    var settingData = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return this.User();
+                return User();
 
               case 2:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee2);
       }));
 
-      function settingData() {
-        return _settingData.apply(this, arguments);
-      }
+      return function settingData() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
 
-      return settingData;
-    }(),
-    onChanges: function onChanges() {
-      this.$emit("change-event", this.Number, this.idea); // document.getElementById("valueForm").submit()
-    },
-    deleteIdea: function deleteIdea() {
-      var _this2 = this;
+    var onChanges = function onChanges() {
+      context.emit("change-event", props.Number, data.idea);
+    };
 
+    var deleteIdea = function deleteIdea() {
       setTimeout(function () {
-        _this2.$emit("del-event", _this2.Number);
+        context.emit("del-event", props.Number);
       }, 50);
-    },
-    resetIdea: function resetIdea() {
-      this.$emit("del-event", this.Number);
-    }
+    };
+
+    var resetIdea = function resetIdea() {
+      context.emit("del-event", props.Number);
+    };
+
+    return {
+      data: data,
+      erMessage: erMessage,
+      canSubmit: canSubmit,
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_2__.onMounted,
+      User: User,
+      settingData: settingData,
+      onChanges: onChanges,
+      deleteIdea: deleteIdea,
+      resetIdea: resetIdea
+    };
   }
-});
+}));
 
 /***/ }),
 
@@ -20694,18 +20701,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     name: "_token",
-    value: $data.csrf
+    value: _ctx.data.csrf
   }, null, 8
   /* PROPS */
   , _hoisted_2), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     name: "user_id",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $data.users.id = $event;
+      return _ctx.data.users.id = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.users.id]]), $options.erMessage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, " ※20文字以内で入力してください ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.data.users.id]]), _ctx.erMessage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, " ※20文字以内で入力してください ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     id: "idea_text",
@@ -20714,27 +20721,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     },
     name: "idea_text",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $data.idea = $event;
+      return _ctx.data.idea = $event;
     }),
     onChange: _cache[2] || (_cache[2] = function () {
-      return $options.onChanges && $options.onChanges.apply($options, arguments);
+      return _ctx.onChanges && _ctx.onChanges.apply(_ctx, arguments);
     })
   }, null, 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.idea]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.data.idea]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "submit",
     name: "add",
     "class": "btn btn-primary ml-2",
     onClick: _cache[3] || (_cache[3] = function () {
-      return $options.deleteIdea && $options.deleteIdea.apply($options, arguments);
+      return _ctx.deleteIdea && _ctx.deleteIdea.apply(_ctx, arguments);
     }),
-    disabled: !$options.canSubmit
+    disabled: !_ctx.canSubmit
   }, " ✓ ", 8
   /* PROPS */
   , _hoisted_5), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     onClick: _cache[4] || (_cache[4] = function () {
-      return $options.resetIdea && $options.resetIdea.apply($options, arguments);
+      return _ctx.resetIdea && _ctx.resetIdea.apply(_ctx, arguments);
     }),
     "class": "btn btn-danger ml-2"
   }, " × ")])]);
