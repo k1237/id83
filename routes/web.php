@@ -24,8 +24,8 @@ Route::get('/', function () {
 });
 
 
-
-// Auth::routes();
+//ここはログインに必要
+Auth::routes();
 
 /*API*/
 Route::middleware('auth')->get('api/csrf', [HomeController::class, 'csrf']);
