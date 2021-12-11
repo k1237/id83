@@ -69,6 +69,7 @@ export default defineComponent({
       await axios.get("https://idealist83.herokuapp.com/api/profile").then((response) => {
         data.users = response.data;
       });
+      console.log(data.users.id);
     };
 
     const settingData = async function () {
