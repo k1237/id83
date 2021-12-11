@@ -7,7 +7,6 @@
           <div class="card-body">
             <form method="post" action="./save">
               <input type="hidden" name="_token" :value="data.csrf" />
-              <input type="hidden" name="user_id" v-model="data.users.id" />
               <textarea
                 class="form-control"
                 name="memo"
@@ -65,17 +64,6 @@ export default defineComponent({
     });
 
     //エラー処理追記必要
-    const User = async function () {
-      await axios.get("https://idealist83.herokuapp.com/api/profile").then((response) => {
-        data.users = response.data;
-      });
-      console.log(data.users.id);
-    };
-
-    const settingData = async function () {
-      await User();
-    };
-
     const Memo = async function () {
       await axios.get("https://idealist83.herokuapp.com/api/memo").then((response) => {
         data.memo = response.data;

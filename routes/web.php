@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 
 
-Auth::routes();
+// Auth::routes();
 
 /*API*/
 Route::middleware('auth')->get('api/csrf', [HomeController::class, 'csrf']);
