@@ -51,7 +51,7 @@ export default defineComponent({
     });
 
     const User = async function () {
-      await axios.get("http://127.0.0.1:8000/api/profile").then((response) => {
+      await axios.get("https://idealist83.herokuapp.com/profile").then((response) => {
         data.users = response.data;
       });
     };

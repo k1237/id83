@@ -66,7 +66,7 @@ export default defineComponent({
 
     //エラー処理追記必要
     const User = async function () {
-      await axios.get("http://127.0.0.1:8000/api/profile").then((response) => {
+      await axios.get("https://idealist83.herokuapp.com/api/profile").then((response) => {
         data.users = response.data;
       });
     };
@@ -76,7 +76,7 @@ export default defineComponent({
     };
 
     const Memo = async function () {
-      await axios.get("http://127.0.0.1:8000/api/memo").then((response) => {
+      await axios.get("https://idealist83.herokuapp.com/api/memo").then((response) => {
         data.memo = response.data;
         data.init = response.data;
       });
