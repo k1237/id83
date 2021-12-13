@@ -38,7 +38,7 @@ export default defineComponent({
     });
 
     const Idea2 = async function () {
-      await axios.get("http://127.0.0.1:8000/api/idea2").then((response) => {
+      await axios.get("https://idealist83.herokuapp.com/api/idea2").then((response) => {
         data.ideas = response.data;
       });
     };

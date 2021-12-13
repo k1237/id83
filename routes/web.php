@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 
-
+//ここはログインに必要
 Auth::routes();
 
 /*API*/

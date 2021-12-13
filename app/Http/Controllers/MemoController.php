@@ -26,11 +26,11 @@ class MemoController extends Controller
     {
         $user = auth()->user();
         $data = $request -> all();
-        // dd($data);
+        // dd($user);
 
         if($data['memo']!=""&&$request->has('save')){
             Memo::insertGetId([
-                'user_id'=>$data['user_id'],
+                'user_id'=>$user['id'],
                 'memo'=>$data['memo'],
                 'status'=>1,
              ]);
