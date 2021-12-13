@@ -7,7 +7,6 @@
           <div class="card-body">
             <form method="post" action="./save">
               <input type="hidden" name="_token" :value="data.csrf" />
-              {{data.csrf}}
               <textarea
                 class="form-control"
                 name="memo"
