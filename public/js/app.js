@@ -19552,7 +19552,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("http://127.0.0.1:8000/api/idea2").then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("https://idealist83.herokuapp.com/api/idea2").then(function (response) {
                   data.ideas = response.data;
                 });
 
@@ -19698,7 +19698,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("http://127.0.0.1:8000/api/idea").then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get("https://idealist83.herokuapp.com/api/idea").then(function (response) {
                   data.ideas = response.data;
                 });
 
@@ -19801,7 +19801,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/profile").then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://idealist83.herokuapp.com/api/profile").then(function (response) {
                   data.users = response.data;
                 });
 
@@ -19915,7 +19915,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/profile").then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://idealist83.herokuapp.com/api/profile").then(function (response) {
                   data.users = response.data;
                 });
 
@@ -20020,7 +20020,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return data.init == "";
     });
     (0,vue__WEBPACK_IMPORTED_MODULE_2__.onMounted)(function () {
-      settingData();
       settingMemo();
 
       if (!data.csrf) {
@@ -20028,18 +20027,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
     }); //エラー処理追記必要
 
-    var User = /*#__PURE__*/function () {
+    var Memo = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var url, config;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/profile").then(function (response) {
-                  data.users = response.data;
+                url = "/api/memo";
+                config = {
+                  headers: {
+                    "Access-Control-Allow-Origin": "*"
+                  }
+                };
+                _context.next = 4;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url, config).then(function (response) {
+                  data.memo = response.data;
+                  data.init = response.data;
+                })["catch"](function (error) {
+                  //エラー時にAPIから返却されるレスポンスデータ
+                  console.log(error.response.data());
                 });
 
-              case 2:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -20047,19 +20057,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }));
 
-      return function User() {
+      return function Memo() {
         return _ref.apply(this, arguments);
       };
     }();
 
-    var settingData = /*#__PURE__*/function () {
+    var settingMemo = /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return User();
+                return Memo();
 
               case 2:
               case "end":
@@ -20069,55 +20079,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }));
 
-      return function settingData() {
-        return _ref2.apply(this, arguments);
-      };
-    }();
-
-    var Memo = /*#__PURE__*/function () {
-      var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _context3.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/memo").then(function (response) {
-                  data.memo = response.data;
-                  data.init = response.data;
-                });
-
-              case 2:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3);
-      }));
-
-      return function Memo() {
-        return _ref3.apply(this, arguments);
-      };
-    }();
-
-    var settingMemo = /*#__PURE__*/function () {
-      var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.next = 2;
-                return Memo();
-
-              case 2:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
-      }));
-
       return function settingMemo() {
-        return _ref4.apply(this, arguments);
+        return _ref2.apply(this, arguments);
       };
     }();
 
@@ -20125,7 +20088,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       data: data,
       canUsesave: canUsesave,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_2__.onMounted,
-      settingData: settingData,
       settingMemo: settingMemo
     };
   }
@@ -20186,7 +20148,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("http://127.0.0.1:8000/api/profile").then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get("https://idealist83.herokuapp.com/profile").then(function (response) {
                   data.users = response.data;
                 });
 
@@ -20815,20 +20777,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: _ctx.data.csrf
   }, null, 8
   /* PROPS */
-  , _hoisted_8), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "hidden",
-    name: "user_id",
-    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.data.users.id = $event;
-    })
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.data.users.id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  , _hoisted_8), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     "class": "form-control",
     name: "memo",
     id: "textarea1",
     rows: "20",
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return _ctx.data.memo = $event;
     })
   }, null, 512
@@ -20992,6 +20946,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _routes_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes/router */ "./resources/js/routes/router.js");
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -21002,9 +20958,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
 app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
-app.mount('#app'); // import Vue from 'vue';
+app.mount('#app');
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; // import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";
 // import Memo from "./components/MemoComponent.vue";
 // import Idea from './Idea.vue';
