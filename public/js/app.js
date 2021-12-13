@@ -20772,7 +20772,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: _ctx.data.csrf
   }, null, 8
   /* PROPS */
-  , _hoisted_8), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  , _hoisted_8), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.csrf) + " ", 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     "class": "form-control",
     name: "memo",
     id: "textarea1",
@@ -20958,7 +20960,7 @@ var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPOR
 app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
 app.mount('#app');
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com';
-(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common.Authorization) = "Bearer {{ csrf_token() }}"; // import Vue from 'vue';
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common.Authorization) = "Bearer token_id"; // import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";
 // import Memo from "./components/MemoComponent.vue";
 // import Idea from './Idea.vue';
