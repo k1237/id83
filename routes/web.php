@@ -32,7 +32,7 @@ Route::middleware('auth')->get('api/csrf', [HomeController::class, 'csrf']);
 
 Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
 
-// Route::middleware('auth')->get('api/memo', [MemoController::class, 'memo']);
+Route::middleware('auth')->get('api/memo', [MemoController::class, 'memo']);
 
 /*ステータス1のアイデア*/
 Route::middleware('auth')->get('api/idea', [ScheduleController::class, 'idea']);
