@@ -64,9 +64,12 @@ export default defineComponent({
 
     //エラー処理追記必要
     const Memo = async function () {
-      let url = "https://idealist83.herokuapp.com/api/memo";
+      const url = "https://idealist83.herokuapp.com/api/memo";
+      const config = {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      };
       await axios
-        .get(url)
+        .get(url,config)
         .then((response) => {
           data.memo = response.data;
           data.init = response.data;
