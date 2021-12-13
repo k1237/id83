@@ -65,18 +65,18 @@ export default defineComponent({
     //エラー処理追記必要
     const Memo = async function () {
       const url = "/api/memo";
-      const config = {
-        headers: { "Access-Control-Allow-Origin": "*" },
-      };
+      // const config = {
+      //   headers: { "Access-Control-Allow-Origin": "*" },
+      // };
       await axios
-        .get(url,config)
+        .get(url)
         .then((response) => {
           data.memo = response.data;
           data.init = response.data;
         })
         .catch(function (error) {
           //エラー時にAPIから返却されるレスポンスデータ
-          console.log(error.response.data());
+          console.log(error.response.data);
         });
     };
 

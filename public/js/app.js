@@ -20029,27 +20029,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var Memo = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var url, config;
+        var url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                url = "/api/memo";
-                config = {
-                  headers: {
-                    "Access-Control-Allow-Origin": "*"
-                  }
-                };
-                _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url, config).then(function (response) {
+                url = "/api/memo"; // const config = {
+                //   headers: { "Access-Control-Allow-Origin": "*" },
+                // };
+
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (response) {
                   data.memo = response.data;
                   data.init = response.data;
                 })["catch"](function (error) {
                   //エラー時にAPIから返却されるレスポンスデータ
-                  console.log(error.response.data());
+                  console.log(error.response.data);
                 });
 
-              case 4:
+              case 3:
               case "end":
                 return _context.stop();
             }
