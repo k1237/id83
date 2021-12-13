@@ -65,11 +65,11 @@ export default defineComponent({
     //エラー処理追記必要
     const Memo = async function () {
       const url = "/api/memo";
-      // const config = {
-      //   headers: { "Access-Control-Allow-Origin": "*" },
-      // };
+      const config = {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      };
       await axios
-        .get(url)
+        .get(url, config)
         .then((response) => {
           data.memo = response.data;
           data.init = response.data;
