@@ -66,7 +66,7 @@ export default defineComponent({
     const Memo = async function () {
       const url = "api/memo";
       await axios
-        .get(url)
+        .get(url, { headers: { Authorization: `Bearer${data.csrf}` } })
         .then((response) => {
           data.memo = response.data;
           data.init = response.data;
