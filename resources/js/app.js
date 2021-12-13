@@ -8,11 +8,11 @@ require('./bootstrap');
 import { createApp } from 'vue';
 import {router} from'./routes/router'
 import App from "./App.vue";
-import axios from "axios";
+// import axios from "axios";
 let app = createApp(App)
 app.use(router)
 app.mount('#app')
-axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
+// axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 
 
 

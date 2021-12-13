@@ -20034,7 +20034,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                url = "/api/memo";
+                url = "http://idealist83.herokuapp.com/api/memo";
                 config = {
                   headers: {
                     "Access-Control-Allow-Origin": "*"
@@ -20946,8 +20946,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _routes_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes/router */ "./resources/js/routes/router.js");
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -20957,12 +20955,12 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-
+ // import axios from "axios";
 
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
 app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
-app.mount('#app');
-(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; // import Vue from 'vue';
+app.mount('#app'); // axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
+// import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";
 // import Memo from "./components/MemoComponent.vue";
 // import Idea from './Idea.vue';
