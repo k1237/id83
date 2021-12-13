@@ -54,33 +54,40 @@ export default defineComponent({
     const canUsesave = computed(() => data.init == "");
 
     onMounted(() => {
-      settingMemo();
+      // settingMemo();
       if (!data.csrf) {
         console.warn(
           'The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">'
         );
       }
-    });
-
-    //エラー処理追記必要
-    const Memo = async function () {
-      await axios
+      axios
         .get("https://idealist83.herokuapp.com/api/memo")
         .then((response) => {
           data.memo = response.data;
           data.init = response.data;
-        })
-        .catch(function (error) {
-          //エラー時にAPIから返却されるレスポンスデータ
-          console.log(error.response.data());
         });
-    };
+    });
 
-    const settingMemo = async function () {
-      await Memo();
-    };
+    //エラー処理追記必要
+    // const Memo = async function () {
+    //   await axios
+    //     .get("https://idealist83.herokuapp.com/api/memo")
+    //     .then((response) => {
+    //       data.memo = response.data;
+    //       data.init = response.data;
+    //     })
+    //     .catch(function (error) {
+    //       //エラー時にAPIから返却されるレスポンスデータ
+    //       console.log(error.response.data());
+    //     });
+    // };
 
-    return { data, canUsesave, onMounted, settingMemo };
+    // const settingMemo = async function () {
+    //   await Memo();
+    // };
+    
+    //settingMemo
+    return { data, canUsesave, onMounted};
   },
 });
 </script>
