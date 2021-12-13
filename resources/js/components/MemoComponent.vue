@@ -64,7 +64,7 @@ export default defineComponent({
 
     //エラー処理追記必要
     const Memo = async function () {
-      const url = "https://idealist83.herokuapp.com/api/memo";
+      const url = "/api/memo";
       const config = {
         headers: { "Access-Control-Allow-Origin": "*" },
       };
