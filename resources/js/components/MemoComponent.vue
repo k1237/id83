@@ -54,38 +54,33 @@ export default defineComponent({
     const canUsesave = computed(() => data.init == "");
 
     onMounted(() => {
-   
+      settingMemo();
       if (!data.csrf) {
         console.warn(
           'The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">'
         );
-        axios.get("api/memo").then((response) => {
-          data.memo = response.data;
-          data.init = response.data;
-        });
       }
     });
 
     //エラー処理追記必要
-    // const Memo = async function () {
-    //   const url = "api/memo";
-    //   await axios
-    //     .get(url)
-    //     .then((response) => {
-    //       data.memo = response.data;
-    //       data.init = response.data;
-    //     })
-    //     .catch(function (error) {
-    //       //エラー時にAPIから返却されるレスポンスデータ
-    //       console.log(error.response.data);
-    //     });
-    // };
+    const Memo = async function () {
+      const url = "api/memo";
+      await axios.get(url)
+        .then((response) => {
+          data.memo = response.data;
+          data.init = response.data;
+        })
+        .catch(function (error) {
+          //エラー時にAPIから返却されるレスポンスデータ
+          console.log(error.response.data);
+        });
+    };
 
-    // const settingMemo = async function () {
-    //   await Memo();
-    // };
+    const settingMemo = async function () {
+      await Memo();
+    };
 
-    return { data, canUsesave, onMounted, };
+    return { data, canUsesave, onMounted, settingMemo };
   },
 });
 </script>
