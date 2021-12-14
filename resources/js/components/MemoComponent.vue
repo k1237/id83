@@ -65,7 +65,13 @@ export default defineComponent({
     //エラー処理追記必要
     const Memo = async function () {
       const url = "/api/memo";
-      await axios.get(url)
+      await axios
+        .get(url, {
+          headers: {
+            "Content-Type": "application/json",
+            "X-API-KEY": "abcdef",
+          },
+        })
         .then((response) => {
           data.memo = response.data;
           data.init = response.data;

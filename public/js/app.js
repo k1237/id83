@@ -20036,7 +20036,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 url = "/api/memo";
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url, {
+                  headers: {
+                    "Content-Type": "application/json",
+                    "X-API-KEY": "abcdef"
+                  }
+                }).then(function (response) {
                   data.memo = response.data;
                   data.init = response.data;
                 })["catch"](function (error) {
