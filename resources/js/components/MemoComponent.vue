@@ -65,7 +65,7 @@ export default defineComponent({
     //エラー処理追記必要
     const Memo = async function () {
       const url = "api/memo";
-      await axios.get(url, { auth : { username : 'user1', password : 'pass1' } })
+      await axios.get(url, {  headers: {'X-SPECIAL-TOKEN': 'abcdef'}})
         .then((response) => {
           data.memo = response.data;
           data.init = response.data;
