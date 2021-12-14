@@ -20960,6 +20960,7 @@ app.mount('#app');
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com';
 var CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
+  'Authorization': "Bearer ".concat(CSRF),
   'X-CSRF-TOKEN': CSRF,
   'X-Requested-With': 'XMLHttpRequest'
 }; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
