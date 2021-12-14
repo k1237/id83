@@ -19,6 +19,7 @@ const CSRF =  document
 .getAttribute("content");
 
 axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest',
     "X-API-KEY": 'abcdef',
     'Content-Type': 'application/json',
 };
