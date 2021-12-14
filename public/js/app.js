@@ -20962,7 +20962,8 @@ var CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute("conte
   'Authorization': "Bearer ".concat(CSRF),
   'X-CSRF-TOKEN': CSRF,
   'X-Requested-With': 'XMLHttpRequest',
-  "API-KEY": 'abcdef'
+  "X-API-KEY": 'abcdef',
+  'Content-Type': 'application/json'
 }; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
 // import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";
