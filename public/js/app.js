@@ -20036,11 +20036,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 url = "api/memo";
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url, {
-                  headers: {
-                    'X-SPECIAL-TOKEN': 'abcdef'
-                  }
-                }).then(function (response) {
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (response) {
                   data.memo = response.data;
                   data.init = response.data;
                 })["catch"](function (error) {
@@ -20961,8 +20957,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
 app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
 app.mount('#app');
-(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; // axios.defaults.headers.common['Authorization'] = `Bearer token_id`;
-// import Vue from 'vue';
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com';
+var CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common.Authorization) = 'Bearer' + CSRF; // import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";
 // import Memo from "./components/MemoComponent.vue";
 // import Idea from './Idea.vue';
