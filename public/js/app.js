@@ -20025,7 +20025,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       if (!data.csrf) {
         console.warn('The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">');
       }
-    }); //エラー処理追記必要
+    });
 
     var Memo = function Memo() {
       var url = "/api/memo";
@@ -20937,16 +20937,18 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
 app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
 app.mount('#app');
-(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com';
-(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.credentials) = 'include';
-var CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
-(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
-  'Authorization': "Bearer ".concat(CSRF),
-  'X-CSRF-TOKEN': CSRF,
-  'X-Requested-With': 'XMLHttpRequest',
-  "X-API-KEY": 'abcdef',
-  'Content-Type': 'application/json'
-}; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; // axios.defaults.credentials='include';
+// const CSRF =  document
+// .querySelector('meta[name="csrf-token"]')
+// .getAttribute("content");
+// axios.defaults.headers.common = {
+//     'Authorization':`Bearer ${CSRF}`,
+//     'X-CSRF-TOKEN': CSRF,
+//     'X-Requested-With': 'XMLHttpRequest',
+//     "X-API-KEY": 'abcdef',
+//     'Content-Type': 'application/json',
+// };
+// axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
 // import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";
 // import Memo from "./components/MemoComponent.vue";
