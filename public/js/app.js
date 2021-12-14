@@ -20020,8 +20020,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return data.init == "";
     });
     (0,vue__WEBPACK_IMPORTED_MODULE_2__.onMounted)(function () {
-      settingMemo();
-
       if (!data.csrf) {
         console.warn('The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">');
       }
@@ -20054,35 +20052,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return function Memo() {
         return _ref.apply(this, arguments);
       };
-    }();
+    }(); // const settingMemo = async function () {
+    //   await Memo();
+    // };
 
-    var settingMemo = /*#__PURE__*/function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return Memo();
-
-              case 2:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
-      }));
-
-      return function settingMemo() {
-        return _ref2.apply(this, arguments);
-      };
-    }();
 
     return {
       data: data,
       canUsesave: canUsesave,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_2__.onMounted,
-      settingMemo: settingMemo
+      Memo: Memo
     };
   }
 }));
@@ -20959,6 +20938,8 @@ app.mount('#app');
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com';
 var CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
+  'Authorization': "Bearer ".concat(CSRF),
+  'X-CSRF-TOKEN': CSRF,
   'X-Requested-With': 'XMLHttpRequest',
   "X-API-KEY": 'abcdef',
   'Content-Type': 'application/json'
