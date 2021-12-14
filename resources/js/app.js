@@ -17,7 +17,11 @@ axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 const CSRF =  document
 .querySelector('meta[name="csrf-token"]')
 .getAttribute("content");
-axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
+axios.defaults.headers.common = {
+    'X-CSRF-TOKEN': CSRF,
+    'X-Requested-With': 'XMLHttpRequest'
+};
+// axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
 
 
 

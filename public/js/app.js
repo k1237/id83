@@ -20959,7 +20959,11 @@ app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
 app.mount('#app');
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com';
 var CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
-(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common.Authorization) = "token".concat(CSRF); // import Vue from 'vue';
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
+  'X-CSRF-TOKEN': CSRF,
+  'X-Requested-With': 'XMLHttpRequest'
+}; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
+// import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";
 // import Memo from "./components/MemoComponent.vue";
 // import Idea from './Idea.vue';
