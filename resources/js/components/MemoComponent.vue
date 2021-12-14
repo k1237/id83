@@ -62,7 +62,7 @@ export default defineComponent({
       }
     });
 
-    //エラー処理追記必要
+    
     const Memo = function () {
       const url = "/api/memo";
        axios.get(url)
