@@ -13,6 +13,7 @@ let app = createApp(App)
 app.use(router)
 app.mount('#app')
 axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
+axios.defaults.credentials='include';
 
 const CSRF =  document
 .querySelector('meta[name="csrf-token"]')
@@ -24,7 +25,6 @@ axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest',
     "X-API-KEY": 'abcdef',
     'Content-Type': 'application/json',
-    "Access-Control-Allow-Origin":'https://idealist83.herokuapp.com',
 };
 
 
