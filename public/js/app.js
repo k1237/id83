@@ -20034,13 +20034,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                url = "api/memo";
+                url = "/api/memo";
                 _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (response) {
                   data.memo = response.data;
                   data.init = response.data;
                 })["catch"](function (error) {
-                  //エラー時にAPIから返却されるレスポンスデータ
                   console.log(error.response.data);
                 });
 
@@ -20962,7 +20961,8 @@ var CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute("conte
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
   'Authorization': "Bearer ".concat(CSRF),
   'X-CSRF-TOKEN': CSRF,
-  'X-Requested-With': 'XMLHttpRequest'
+  'X-Requested-With': 'XMLHttpRequest',
+  "X-API-KEY": 'abcdef'
 }; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
 // import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";

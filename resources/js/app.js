@@ -20,8 +20,11 @@ const CSRF =  document
 axios.defaults.headers.common = {
     'Authorization':`Bearer ${CSRF}`,
     'X-CSRF-TOKEN': CSRF,
-    'X-Requested-With': 'XMLHttpRequest'
+    'X-Requested-With': 'XMLHttpRequest',
+    "X-API-KEY": 'abcdef',
 };
+
+
 // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
 
 
