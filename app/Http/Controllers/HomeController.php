@@ -33,6 +33,7 @@ class HomeController extends Controller
     public function profile(Request $request)
     {
         return Auth::user();
+        
     }
 
     public function csrf(Request $request)
