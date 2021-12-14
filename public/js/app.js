@@ -20020,28 +20020,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return data.init == "";
     });
     (0,vue__WEBPACK_IMPORTED_MODULE_2__.onMounted)(function () {
+      settingMemo();
+
       if (!data.csrf) {
         console.warn('The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">');
       }
     }); //エラー処理追記必要
 
-    var Memo = /*#__PURE__*/function () {
+    var Memo = function Memo() {
+      var url = "/api/memo";
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (response) {
+        data.memo = response.data;
+        data.init = response.data;
+      })["catch"](function (error) {
+        console.log(error.response.data);
+      });
+    };
+
+    var settingMemo = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                url = "/api/memo";
-                _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (response) {
-                  data.memo = response.data;
-                  data.init = response.data;
-                })["catch"](function (error) {
-                  console.log(error.response.data);
-                });
+                _context.next = 2;
+                return Memo();
 
-              case 3:
+              case 2:
               case "end":
                 return _context.stop();
             }
@@ -20049,19 +20054,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }));
 
-      return function Memo() {
+      return function settingMemo() {
         return _ref.apply(this, arguments);
       };
-    }(); // const settingMemo = async function () {
-    //   await Memo();
-    // };
-
+    }();
 
     return {
       data: data,
       canUsesave: canUsesave,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_2__.onMounted,
-      Memo: Memo
+      settingMemo: settingMemo
     };
   }
 }));
