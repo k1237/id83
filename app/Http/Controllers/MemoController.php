@@ -49,7 +49,7 @@ class MemoController extends Controller
         //これだと反映される
         // return Memo::first()->memo;
         $user = auth()->user();
-        $memo =Memo::where('user_id', $user['id'])->first()->memo;
+        $memo =Memo::where('user_id', 1)->first()->memo;
         return $memo;
     }
 }
