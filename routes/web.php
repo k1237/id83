@@ -30,7 +30,7 @@ Auth::routes();
 
 /*API*/
 
-Route::post('/tokens/create', function (Request $request) {
+Route::get('/tokens/create', function (Request $request) {
     $token = $request->user()->createToken($request->token_name);
     return ['token' => $token->plainTextToken];
 });
