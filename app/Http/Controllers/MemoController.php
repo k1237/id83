@@ -55,9 +55,10 @@ class MemoController extends Controller
 
 
         $user = auth()->user()->id ?? Null;
-        if($user==Null){
+        if($user!=Null){
             return $user;
         }
+
         // if(isset($user)){
         //     $memo =Memo::where('user_id', $user['id'])->first()->memo;
         //     return $memo;
