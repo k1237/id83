@@ -7,6 +7,7 @@ use App\Http\Controllers\IdeaController;
 use App\Http\Controllers\ScheduleController;
 use
     App\Http\Controllers\ExcutedController;
+    use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,11 @@ Route::get('/', function () {
 Auth::routes();
 
 /*API*/
+
+Route::post('/tokens/create', function (Request $request) {
+    $token = $request->user()->createToken($request->token_name);
+    return ['token' => $token->plainTextToken];
+});
 
 Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
 
