@@ -49,8 +49,10 @@ class MemoController extends Controller
         $user = auth()->user();
         $memo = Memo::where('user_id', $user['id'])->first()->memo ?? null;
 
-        if(isset($memo)){
+        if(is_array($memo)){
           return $memo;
+        }else if(!is_array($memo)){
+            //何もしない
         }
        
     }
