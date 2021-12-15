@@ -20037,8 +20037,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 url = "/api/memo";
                 _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (response) {
-                  data.memo = response.data;
-                  data.init = response.data;
+                  data.memo = response;
+                  data.init = response;
                 })["catch"](function (error) {
                   console.log(error.response.data);
                 });

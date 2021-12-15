@@ -67,8 +67,8 @@ export default defineComponent({
       const url = "/api/memo";
        await axios.get(url)
         .then((response) => {
-          data.memo = response.data;
-          data.init = response.data;
+          data.memo = response;
+          data.init = response;
         })
         .catch(function (error) {
           console.log(error.response.data);
