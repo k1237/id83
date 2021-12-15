@@ -20028,7 +20028,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     });
 
     var Memo = function Memo() {
-      var url = "https://idealist83.herokuapp.com/api/memo";
+      var url = "/api/memo";
       axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (response) {
         data.memo = response.data;
         data.init = response.data;
@@ -20936,8 +20936,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
 app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
-app.mount('#app'); // axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
-// axios.defaults.credentials='include';
+app.mount('#app');
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; // axios.defaults.credentials='include';
 // const CSRF =  document
 // .querySelector('meta[name="csrf-token"]')
 // .getAttribute("content");
@@ -20945,7 +20945,7 @@ app.mount('#app'); // axios.defaults.baseURL = 'https://idealist83.herokuapp.com
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
   // 'Authorization':`Bearer ${CSRF}`,
   // 'X-CSRF-TOKEN': CSRF,
-  // 'X-Requested-With': 'XMLHttpRequest',
+  'X-Requested-With': 'XMLHttpRequest',
   "X-API-KEY": 'abcdef',
   'Content-Type': 'application/json'
 }; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
