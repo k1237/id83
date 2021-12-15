@@ -60,8 +60,6 @@ class MemoController extends Controller
         // }
 
         $user = auth()->user()->id ??null ;
-            return Memo::where('user_id', $user)->first()->memo;
-
-      
+            return Memo::where('user_id', $user)->first()->memo??null;      
     }
 }
