@@ -44,7 +44,7 @@ class MemoController extends Controller
         return redirect('/memo');
     }
 
-    public function memo()
+    public function memo(Request $request)
     {
         //これだと反映される
         // return Memo::first()->memo;
@@ -55,7 +55,7 @@ class MemoController extends Controller
 
 
         $user = auth()->user();
-        if($user['id']!=''){
+        if(isset($user)){
             $memo =Memo::where('user_id', $user['id'])->first()->memo;
             return $memo;
         }      
