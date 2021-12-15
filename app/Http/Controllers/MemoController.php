@@ -55,7 +55,7 @@ class MemoController extends Controller
 
 
         $user = auth()->user()->id ?? Null;
-        if($user!=Null){
+        if($user==Null){
             return $user;
         }
         // if(isset($user)){
