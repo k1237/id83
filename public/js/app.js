@@ -20947,8 +20947,7 @@ app.mount('#app');
   // 'X-CSRF-TOKEN': CSRF,
   // 'X-Requested-With': 'XMLHttpRequest',
   // "X-API-KEY": 'abcdef',
-  // 'Content-Type': 'application/json',
-  'responseType': 'text'
+  'Content-Type': 'application/json'
 }; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
 // import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";

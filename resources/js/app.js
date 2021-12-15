@@ -24,8 +24,7 @@ axios.defaults.headers.common = {
     // 'X-CSRF-TOKEN': CSRF,
     // 'X-Requested-With': 'XMLHttpRequest',
     // "X-API-KEY": 'abcdef',
-    // 'Content-Type': 'application/json',
-    'responseType':'text',
+    'Content-Type': 'application/json',
 };
 
 
