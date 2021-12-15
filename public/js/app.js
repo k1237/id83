@@ -20945,7 +20945,7 @@ app.mount('#app');
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
   // 'Authorization':`Bearer ${CSRF}`,
   // 'X-CSRF-TOKEN': CSRF,
-  'X-Requested-With': 'XMLHttpRequest',
+  // 'X-Requested-With': 'XMLHttpRequest',
   "X-API-KEY": 'abcdef',
   'Content-Type': 'application/json'
 }; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
