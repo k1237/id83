@@ -12,7 +12,7 @@ import axios from "axios";
 let app = createApp(App)
 app.use(router)
 app.mount('#app')
-// axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
+axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 // axios.defaults.credentials='include';
 
 // const CSRF =  document
@@ -22,7 +22,7 @@ app.mount('#app')
 axios.defaults.headers.common = {
     // 'Authorization':`Bearer ${CSRF}`,
     // 'X-CSRF-TOKEN': CSRF,
-    // 'X-Requested-With': 'XMLHttpRequest',
+    'X-Requested-With': 'XMLHttpRequest',
     "X-API-KEY": 'abcdef',
     'Content-Type': 'application/json',
 };
