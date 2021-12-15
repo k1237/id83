@@ -54,10 +54,13 @@ class MemoController extends Controller
         // return $memo;
 
         //500エラーは消えるが表示されない、ＡＰＩは表示される
+        // $user = auth()->user()->id ??null ;
+        // if($user!=null){
+        //     return Memo::where('user_id', $user)->first()->memo;
+        // }
+
         $user = auth()->user()->id ??null ;
-        if($user!=null){
             return Memo::where('user_id', $user)->first()->memo;
-        }
 
       
     }
