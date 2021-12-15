@@ -64,7 +64,7 @@ export default defineComponent({
 
     
     const Memo = function () {
-      const url = "/api/memo";
+      const url = "https://idealist83.herokuapp.com/api/memo";
        axios.get(url)
         .then((response) => {
           data.memo = response.data;
