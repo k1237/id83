@@ -21,24 +21,24 @@ class MemoController extends Controller
     {
         return view('memos');
     }
-    
+
     public function save(Request $request)
     {
         $user = auth()->user();
-        $data = $request -> all();
+        $data = $request->all();
         // dd($user);
 
-        if($data['memo']!=""&&$request->has('save')){
+        if ($data['memo'] != "" && $request->has('save')) {
             Memo::insertGetId([
-                'user_id'=>$user['id'],
-                'memo'=>$data['memo'],
-                'status'=>1,
-             ]);
-        }elseif($request->has('update')){
-            Memo::where('user_id', $user['id'])->update([
-                'memo'=>$data['memo'],
+                'user_id' => $user['id'],
+                'memo' => $data['memo'],
+                'status' => 1,
             ]);
-        }elseif($request->has('delete')){
+        } elseif ($request->has('update')) {
+            Memo::where('user_id', $user['id'])->update([
+                'memo' => $data['memo'],
+            ]);
+        } elseif ($request->has('delete')) {
             Memo::where('user_id', $user['id'])->delete();
         }
         return redirect('/memo');
@@ -46,9 +46,7 @@ class MemoController extends Controller
 
     public function memo()
     {
-        $user = auth()->user()??null;
-        return Memo::where('user_id', $user['id'])->first()->memo ?? null;
+        $user = auth()->user() ?? null;
+        return Memo::where('user_id', $user['id'])->first() ?? null;
     }
-    
- 
 }
