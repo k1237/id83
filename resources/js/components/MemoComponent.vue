@@ -54,7 +54,7 @@ export default defineComponent({
     const canUsesave = computed(() => data.init == "");
 
     onMounted(() => {
-      settingMemo();
+      Memo();
       if (!data.csrf) {
         console.warn(
           'The CSRF token is missing. Ensure that the HTML header includes the following: <meta name="csrf-token" content="{{ csrf_token() }}">'
@@ -63,9 +63,9 @@ export default defineComponent({
     });
 
     
-    const Memo = function () {
+    const Memo = async function () {
       const url = "/api/memo";
-       axios.get(url)
+       await axios.get(url)
         .then((response) => {
           data.memo = response.data;
           data.init = response.data;
@@ -75,11 +75,11 @@ export default defineComponent({
         });
     };
 
-    const settingMemo = async function () {
-      await Memo();
-    };
+    // const settingMemo = async function () {
+    //   await Memo();
+    // };
 
-    return { data, canUsesave, onMounted, settingMemo };
+    return { data, canUsesave, onMounted, Memo };
   },
 });
 </script>
