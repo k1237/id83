@@ -20055,10 +20055,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return function Memo() {
         return _ref.apply(this, arguments);
       };
-    }(); // const settingMemo = async function () {
-    //   await Memo();
-    // };
-
+    }();
 
     return {
       data: data,
@@ -20942,14 +20939,14 @@ app.mount('#app');
 // const CSRF =  document
 // .querySelector('meta[name="csrf-token"]')
 // .getAttribute("content");
-// axios.defaults.headers.common = {
-//     // 'Authorization':`Bearer ${CSRF}`,
-//     // 'X-CSRF-TOKEN': CSRF,
-//     // 'X-Requested-With': 'XMLHttpRequest',
-//     // "X-API-KEY": 'abcdef',
-//     // 'Content-Type': 'application/json',
-// };
-// axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
+
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
+  'Authorization': "Bearer azptTKsYayx0ECTFGJ2x0I4uxOmXiTyLjTgsnD4hJ0UBJBdS9nZvd2ImeHIS" // 'X-CSRF-TOKEN': CSRF,
+  // 'X-Requested-With': 'XMLHttpRequest',
+  // "X-API-KEY": 'abcdef',
+  // 'Content-Type': 'application/json',
+
+}; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
 // import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";
 // import Memo from "./components/MemoComponent.vue";

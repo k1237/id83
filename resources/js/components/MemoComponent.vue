@@ -76,9 +76,6 @@ export default defineComponent({
         });
     };
 
-    // const settingMemo = async function () {
-    //   await Memo();
-    // };
 
     return { data, canUsesave, onMounted, Memo };
   },

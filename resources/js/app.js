@@ -19,13 +19,13 @@ axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 // .querySelector('meta[name="csrf-token"]')
 // .getAttribute("content");
 
-// axios.defaults.headers.common = {
-//     // 'Authorization':`Bearer ${CSRF}`,
-//     // 'X-CSRF-TOKEN': CSRF,
-//     // 'X-Requested-With': 'XMLHttpRequest',
-//     // "X-API-KEY": 'abcdef',
-//     // 'Content-Type': 'application/json',
-// };
+axios.defaults.headers.common = {
+    'Authorization':`Bearer azptTKsYayx0ECTFGJ2x0I4uxOmXiTyLjTgsnD4hJ0UBJBdS9nZvd2ImeHIS`,
+    // 'X-CSRF-TOKEN': CSRF,
+    // 'X-Requested-With': 'XMLHttpRequest',
+    // "X-API-KEY": 'abcdef',
+    // 'Content-Type': 'application/json',
+};
 
 
 // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
