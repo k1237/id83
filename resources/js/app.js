@@ -21,9 +21,7 @@ axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 
 axios.defaults.headers.common = {
     'Authorization':`Bearer azptTKsYayx0ECTFGJ2x0I4uxOmXiTyLjTgsnD4hJ0UBJBdS9nZvd2ImeHIS`,
-    // 'X-CSRF-TOKEN': CSRF,
-    // 'X-Requested-With': 'XMLHttpRequest',
-    // "X-API-KEY": 'abcdef',
+    'X-Requested-With': 'XMLHttpRequest',
     // 'Content-Type': 'application/json',
 };
 

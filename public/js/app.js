@@ -20941,10 +20941,8 @@ app.mount('#app');
 // .getAttribute("content");
 
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
-  'Authorization': "Bearer azptTKsYayx0ECTFGJ2x0I4uxOmXiTyLjTgsnD4hJ0UBJBdS9nZvd2ImeHIS" // 'X-CSRF-TOKEN': CSRF,
-  // 'X-Requested-With': 'XMLHttpRequest',
-  // "X-API-KEY": 'abcdef',
-  // 'Content-Type': 'application/json',
+  'Authorization': "Bearer azptTKsYayx0ECTFGJ2x0I4uxOmXiTyLjTgsnD4hJ0UBJBdS9nZvd2ImeHIS",
+  'X-Requested-With': 'XMLHttpRequest' // 'Content-Type': 'application/json',
 
 }; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
 // import Vue from 'vue';
