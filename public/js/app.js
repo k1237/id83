@@ -20039,7 +20039,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get(url).then(function (response) {
                   data.memo = response.data;
                   data.init = response.data;
-                  console.log(response.data);
+                  console.log(response);
                 })["catch"](function (error) {
                   console.log(error.response.data);
                 });
