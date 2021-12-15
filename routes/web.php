@@ -29,14 +29,9 @@ Auth::routes();
 
 /*API*/
 
-Route::post('/tokens/create', function (Request $request) {
-    $token = $request->user()->createToken($request->token_name);
-    return ['token' => $token->plainTextToken];
-});
-
 Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
 
-Route::middleware('auth:sanctum')->get('api/memo',[MemoController::class, 'memo']);
+Route::middleware('auth')->get('api/memo',[MemoController::class, 'memo']);
 
 /*ステータス1のアイデア*/
 Route::middleware('auth')->get('api/idea', [ScheduleController::class, 'idea']);
