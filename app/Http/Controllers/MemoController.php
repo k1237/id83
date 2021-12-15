@@ -61,7 +61,9 @@ class MemoController extends Controller
 
         //500エラーが消えるが表示はされないAPIは表示される
         $user = auth()->user()->id ?? null;
-        $memo = Memo::where('user_id', $user)->first()->memo ?? null;
+        $memo_id = Memo::where('user_id', $user)->first()->id ?? null;
+        $memo = Memo::find($memo_id);
+
         return $memo ;
     }
 }
