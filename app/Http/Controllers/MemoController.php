@@ -51,6 +51,5 @@ class MemoController extends Controller
         // if(isset($memo)){
         //     return $memo;
             return Memo::all();
-        }
     }
 }
