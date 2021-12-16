@@ -59,4 +59,6 @@ class MemoController extends Controller
         $memo = Memo::where('user_id', $user)->first() ?? null;
         return $memo->memo??null ;
     }
+
+    
 }

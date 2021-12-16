@@ -30,10 +30,7 @@ Auth::routes();
 
 /*API*/
 
-Route::get('/tokens/create', function (Request $request) {
-    $token = $request->user()->createToken($request->token_name);
-    return ['token' => $token->plainTextToken];
-});
+Route::middleware('auth')->get('api/token', [ApiTokenController::class, 'update']);
 
 Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
 
