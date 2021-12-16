@@ -20935,15 +20935,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
 app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
 app.mount('#app');
-(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; // axios.defaults.credentials='include';
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; //ascync awaitでapi/tokenから情報を取得したい
 
-var API_TOKEN = "RGrAlyEWgqynK3GGEyKtOp5ULLp7eaRkcokPys7ABep0L0vXyb22SeVUqpKjLlPBbpnh6Kd7idlGxbQk";
+var API_TOKEN = "HczcuYWrBAiDrnzRkov4ngUPZNBKqwVEMddWEQZX7WZpwySgVZ6YjQQ2ZjGuY2j3fgpPIDw05G2Ls2RQ";
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
   'Content-Type': 'application/json',
   'Authorization': "Bearer ".concat(API_TOKEN),
   'X-Requested-With': 'XMLHttpRequest'
-}; // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
-// import Vue from 'vue';
+}; // import Vue from 'vue';
 // import Home from "./components/HomeComponent.vue";
 // import Memo from "./components/MemoComponent.vue";
 // import Idea from './Idea.vue';
