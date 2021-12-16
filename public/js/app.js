@@ -20950,7 +20950,7 @@ app.mount('#app');
 // };
 // getToken();
 
-var API_TOKEN = "gWmQLrEqjPiduCjaFMD0wR90z5nhXVmQr3PmHEHVNSNExNXBrokDlgrsnPiWroeU7B6JXvZSkBSE96J3";
+var API_TOKEN = "bkVdXQmAkcQLBPmNjqcuYHiFnfKP5DWyYu5jGL3za9BsGxUlIuZYi4tz3aqj5hvAgFaKozDMejD717n9";
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
   'Content-Type': 'application/json',
   'Authorization': "Bearer ".concat(API_TOKEN) // 'X-Requested-With': 'XMLHttpRequest',
