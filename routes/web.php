@@ -37,7 +37,7 @@ Route::get('/tokens/create', function (Request $request) {
 
 Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
 
-Route::middleware('auth')->get('api/memo',[MemoController::class, 'memo']);
+// Route::middleware('auth')->get('api/memo',[MemoController::class, 'memo']);
 
 /*ステータス1のアイデア*/
 Route::middleware('auth')->get('api/idea', [ScheduleController::class, 'idea']);
