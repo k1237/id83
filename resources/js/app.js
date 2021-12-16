@@ -22,7 +22,6 @@ const API_TOKEN = "HczcuYWrBAiDrnzRkov4ngUPZNBKqwVEMddWEQZX7WZpwySgVZ6YjQQ2ZjGuY
 axios.defaults.headers.common = {
        'Content-Type': 'application/json',
        'Authorization': `Bearer ${API_TOKEN}`,
-       'X-Requested-With': 'XMLHttpRequest',
 };
 
 
