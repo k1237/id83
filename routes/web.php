@@ -33,10 +33,11 @@ Auth::routes();
 
 Route::middleware('auth')->get('api/token', [ApiTokenController::class, 'update']);
 
+
 Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
 
 
-Route::middleware('auth:sanctum')->get('api/memo',[MemoController::class, 'memo']);
+Route::middleware('auth:api')->get('api/memo',[MemoController::class, 'memo']);
 
 
 /*ステータス1のアイデア*/

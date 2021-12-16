@@ -6,7 +6,7 @@
 
 require('./bootstrap');
 import { createApp } from 'vue';
-import {router} from'./routes/router'
+import { router } from './routes/router'
 import App from "./App.vue";
 import axios from "axios";
 let app = createApp(App)
@@ -15,15 +15,13 @@ app.mount('#app')
 axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 // axios.defaults.credentials='include';
 
-// const CSRF =  document
-// .querySelector('meta[name="csrf-token"]')
-// .getAttribute("content");
+const API_TOKEN = "k7A7s3VlggDbAjVl9FIhhVxl2fcd3XhWnaOvpKqDhP34DjkDvRBo5kLx6ZMq2ucgvXdz5o6bmjQ4bX6X";
 
-// axios.defaults.headers.common = {
-       // 'Content-Type': 'application/json',
-//     // 'Authorization':`Bearer ${CSRF}`,
-//     // 'X-Requested-With': 'XMLHttpRequest',
-// };
+axios.defaults.headers.common = {
+       'Content-Type': 'application/json',
+       'Authorization': `Bearer ${API_TOKEN}`,
+       'X-Requested-With': 'XMLHttpRequest',
+};
 
 
 // axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
