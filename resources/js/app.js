@@ -12,8 +12,10 @@ import axios from "axios";
 let app = createApp(App)
 app.use(router)
 app.mount('#app')
+
 axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
-// axios.defaults.credentials='include';
+
+//ascync awaitでapi/tokenから情報を取得したい
 
 const API_TOKEN = "RGrAlyEWgqynK3GGEyKtOp5ULLp7eaRkcokPys7ABep0L0vXyb22SeVUqpKjLlPBbpnh6Kd7idlGxbQk";
 
@@ -22,9 +24,6 @@ axios.defaults.headers.common = {
        'Authorization': `Bearer ${API_TOKEN}`,
        'X-Requested-With': 'XMLHttpRequest',
 };
-
-
-// axios.defaults.headers.common['Authorization'] = `token${CSRF}`;
 
 
 

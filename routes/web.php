@@ -31,6 +31,7 @@ Auth::routes();
 
 /*API*/
 
+/*自動でトークンを生成するにはどうすれば？*/
 Route::middleware('auth')->get('api/token', [ApiTokenController::class, 'update']);
 
 
