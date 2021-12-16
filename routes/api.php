@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth')->get('/memo',[MemoController::class, 'memo']);
+Route::get('/memo',[MemoController::class, 'memo']);
 
 
