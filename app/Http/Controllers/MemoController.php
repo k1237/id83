@@ -56,6 +56,7 @@ class MemoController extends Controller
         //500エラーが消えるが表示はされないAPIは表示される
         $user = auth()->user()->id ?? null;
         $memo = Memo::where('user_id', $user)->first() ?? null;
-        return $memo->memo??null ;
+        $token =$user->createToken('myapptoken')->plainTextToken;
+        return $token ;
     }
 }
