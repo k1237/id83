@@ -20937,7 +20937,7 @@ app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
 app.mount('#app');
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; // axios.defaults.credentials='include';
 
-var API_TOKEN = "k7A7s3VlggDbAjVl9FIhhVxl2fcd3XhWnaOvpKqDhP34DjkDvRBo5kLx6ZMq2ucgvXdz5o6bmjQ4bX6X";
+var API_TOKEN = "RGrAlyEWgqynK3GGEyKtOp5ULLp7eaRkcokPys7ABep0L0vXyb22SeVUqpKjLlPBbpnh6Kd7idlGxbQk";
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
   'Content-Type': 'application/json',
   'Authorization': "Bearer ".concat(API_TOKEN),

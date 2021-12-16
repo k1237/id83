@@ -15,7 +15,7 @@ app.mount('#app')
 axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 // axios.defaults.credentials='include';
 
-const API_TOKEN = "k7A7s3VlggDbAjVl9FIhhVxl2fcd3XhWnaOvpKqDhP34DjkDvRBo5kLx6ZMq2ucgvXdz5o6bmjQ4bX6X";
+const API_TOKEN = "RGrAlyEWgqynK3GGEyKtOp5ULLp7eaRkcokPys7ABep0L0vXyb22SeVUqpKjLlPBbpnh6Kd7idlGxbQk";
 
 axios.defaults.headers.common = {
        'Content-Type': 'application/json',
