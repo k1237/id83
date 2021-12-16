@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemoController;
 use App\Http\Controllers\IdeaController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\ApiTokenController;
 use
     App\Http\Controllers\ExcutedController;
     use Illuminate\Support\Facades\Auth;
