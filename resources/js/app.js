@@ -24,14 +24,18 @@ const getToken = async () => {
        const url = "/api/token";
        await axios.get(url)
               .then((response) => {
-                     return response.data;
+               return response.data;
               })
               .catch(function (error) {
                      console.log(error.response.data);
               });
 };
 
-const API_TOKEN = getToken();
+getToken();
+console.log(getToken());
+
+
+const API_TOKEN = "SY7jWv1DZBrF960rDkKPjHEXM3XkzVQIMDse5XcmbHIg9e1p2Gv5t0yU2TZhvxgfrgCZGu11aFHrtb9B";
 
 axios.defaults.headers.common = {
        'Content-Type': 'application/json',

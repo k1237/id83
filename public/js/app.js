@@ -20974,7 +20974,9 @@ var getToken = /*#__PURE__*/function () {
   };
 }();
 
-var API_TOKEN = getToken();
+getToken();
+console.log(getToken());
+var API_TOKEN = "SY7jWv1DZBrF960rDkKPjHEXM3XkzVQIMDse5XcmbHIg9e1p2Gv5t0yU2TZhvxgfrgCZGu11aFHrtb9B";
 (axios__WEBPACK_IMPORTED_MODULE_4___default().defaults.headers.common) = {
   'Content-Type': 'application/json',
   'Authorization': "Bearer ".concat(API_TOKEN) // 'X-Requested-With': 'XMLHttpRequest',
