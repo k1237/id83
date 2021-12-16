@@ -14,11 +14,13 @@ use App\Http\Controllers\MemoController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::group(['middleware' => 'auth:sanctum'], function () {
 
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
 });
+//デフォ
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 //authを含めるとリダイレクトする
 //なしだとWeb.phpと同様
