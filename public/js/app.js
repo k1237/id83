@@ -20948,7 +20948,7 @@ app.mount('#app');
 
 var getToken = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-    var url, API_TOKEN;
+    var url;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -20956,20 +20956,13 @@ var getToken = /*#__PURE__*/function () {
             url = "/api/token";
             _context.next = 3;
             return axios__WEBPACK_IMPORTED_MODULE_4___default().get(url).then(function (response) {
+              console.log(response.data);
               return response.data;
             })["catch"](function (error) {
               console.log(error.response.data);
             });
 
           case 3:
-            API_TOKEN = _context.sent;
-            (axios__WEBPACK_IMPORTED_MODULE_4___default().defaults.headers.common) = {
-              'Content-Type': 'application/json',
-              'Authorization': "Bearer ".concat(API_TOKEN) // 'X-Requested-With': 'XMLHttpRequest',
-
-            };
-
-          case 5:
           case "end":
             return _context.stop();
         }

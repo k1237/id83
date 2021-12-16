@@ -22,19 +22,14 @@ axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 
 const getToken = async () => {
        const url = "/api/token";
-       const API_TOKEN = await axios.get(url)
+       await axios.get(url)
               .then((response) => {
+                     console.log(response.data)
                      return response.data;
               })
               .catch(function (error) {
                      console.log(error.response.data);
               });
-
-       axios.defaults.headers.common = {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${API_TOKEN}`,
-              // 'X-Requested-With': 'XMLHttpRequest',
-       };
 };
 
 getToken();
