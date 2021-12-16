@@ -20,22 +20,22 @@ axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 //acync awaitでapi/tokenから情報を取得したい
 //axios とは
 
-const getToken = async () => {
-       const url = "/api/token";
-       await axios.get(url)
-              .then((response) => {
-               return response.data;
-              })
-              .catch(function (error) {
-                     console.log(error.response.data);
-              });
-};
+// const getToken = async () => {
+//        const url = "/api/token";
+//        await axios.get(url)
+//               .then((response) => {
+//                return response.data;
+//               })
+//               .catch(function (error) {
+//                      console.log(error.response.data);
+//               });
+// };
 
-getToken();
-console.log(getToken());
+// getToken();
+// console.log(getToken());
 
 
-const API_TOKEN = "SY7jWv1DZBrF960rDkKPjHEXM3XkzVQIMDse5XcmbHIg9e1p2Gv5t0yU2TZhvxgfrgCZGu11aFHrtb9B";
+const API_TOKEN = "eNhnnXVcQsaDeu8m4LwrUwvfiUKdCFpCj2gymU3KgIIg29ikk3tTyC8fXmtmrWZV1aoS2hIh87I4eMAr";
 
 axios.defaults.headers.common = {
        'Content-Type': 'application/json',
