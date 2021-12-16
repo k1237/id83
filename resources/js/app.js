@@ -20,28 +20,33 @@ axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 //acync awaitでapi/tokenから情報を取得したい
 //axios とは
 
-// const getToken = async () => {
-//        const url = "/api/token";
-//        await axios.get(url)
-//               .then((response) => {
-//                return response.data;
-//               })
-//               .catch(function (error) {
-//                      console.log(error.response.data);
-//               });
-// };
+const getToken = async () => {
+       const url = "/api/token";
+       const API_TOKEN = await axios.get(url)
+              .then((response) => {
+                     return response.data;
+              })
+              .catch(function (error) {
+                     console.log(error.response.data);
+              });
 
-// getToken();
-
-// const API_TOKEN = getToken();
-
-const API_TOKEN = "zHvH4H1e6vZx4OyFhX5HqcKjEiz1uuCbxvKJjnbhMZSBS5lubZsBV36twR0VvegAzgGREqmToRS1EuEa";
-
-axios.defaults.headers.common = {
-       'Content-Type': 'application/json',
-       'Authorization': `Bearer ${API_TOKEN}`,
-       // 'X-Requested-With': 'XMLHttpRequest',
+       axios.defaults.headers.common = {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${API_TOKEN}`,
+              // 'X-Requested-With': 'XMLHttpRequest',
+       };
 };
+
+getToken();
+
+
+// const API_TOKEN = "zHvH4H1e6vZx4OyFhX5HqcKjEiz1uuCbxvKJjnbhMZSBS5lubZsBV36twR0VvegAzgGREqmToRS1EuEa";
+
+// axios.defaults.headers.common = {
+//        'Content-Type': 'application/json',
+//        'Authorization': `Bearer ${API_TOKEN}`,
+//        // 'X-Requested-With': 'XMLHttpRequest',
+// };
 
 
 
