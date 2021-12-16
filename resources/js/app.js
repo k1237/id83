@@ -17,7 +17,7 @@ axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 
 //acync awaitでapi/tokenから情報を取得したい
 
-const API_TOKEN = "HczcuYWrBAiDrnzRkov4ngUPZNBKqwVEMddWEQZX7WZpwySgVZ6YjQQ2ZjGuY2j3fgpPIDw05G2Ls2RQ";
+const API_TOKEN = "d8ujsaGPzxCGWrGTqFhKlgI6V4SUDZq9yy3zVyl99sbSOiwyCZxztq59NQRX8iUN66nIcJKiM8QkMjwn";
 
 axios.defaults.headers.common = {
        'Content-Type': 'application/json',

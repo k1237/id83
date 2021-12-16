@@ -20937,7 +20937,7 @@ app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
 app.mount('#app');
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; //acync awaitでapi/tokenから情報を取得したい
 
-var API_TOKEN = "HczcuYWrBAiDrnzRkov4ngUPZNBKqwVEMddWEQZX7WZpwySgVZ6YjQQ2ZjGuY2j3fgpPIDw05G2Ls2RQ";
+var API_TOKEN = "d8ujsaGPzxCGWrGTqFhKlgI6V4SUDZq9yy3zVyl99sbSOiwyCZxztq59NQRX8iUN66nIcJKiM8QkMjwn";
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
   'Content-Type': 'application/json',
   'Authorization': "Bearer ".concat(API_TOKEN)
