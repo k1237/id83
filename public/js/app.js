@@ -20950,7 +20950,7 @@ app.mount('#app');
 // getToken();
 // console.log(getToken());
 
-var API_TOKEN = "eNhnnXVcQsaDeu8m4LwrUwvfiUKdCFpCj2gymU3KgIIg29ikk3tTyC8fXmtmrWZV1aoS2hIh87I4eMAr";
+var API_TOKEN = "zHvH4H1e6vZx4OyFhX5HqcKjEiz1uuCbxvKJjnbhMZSBS5lubZsBV36twR0VvegAzgGREqmToRS1EuEa";
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
   'Content-Type': 'application/json',
   'Authorization': "Bearer ".concat(API_TOKEN) // 'X-Requested-With': 'XMLHttpRequest',
