@@ -9,6 +9,8 @@ import { createApp } from 'vue';
 import { router } from './routes/router'
 import App from "./App.vue";
 import axios from "axios";
+
+
 let app = createApp(App)
 app.use(router)
 app.mount('#app')
@@ -16,12 +18,25 @@ app.mount('#app')
 axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 
 //acync awaitでapi/tokenから情報を取得したい
+//axios とは
 
-const API_TOKEN = "SY7jWv1DZBrF960rDkKPjHEXM3XkzVQIMDse5XcmbHIg9e1p2Gv5t0yU2TZhvxgfrgCZGu11aFHrtb9B";
+const getToken = async () => {
+       const url = "/api/token";
+       await axios.get(url)
+              .then((response) => {
+                     return response.data;
+              })
+              .catch(function (error) {
+                     console.log(error.response.data);
+              });
+};
+
+const API_TOKEN = getToken();
 
 axios.defaults.headers.common = {
        'Content-Type': 'application/json',
        'Authorization': `Bearer ${API_TOKEN}`,
+       // 'X-Requested-With': 'XMLHttpRequest',
 };
 
 
