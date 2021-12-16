@@ -20,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/memo',[MemoController::class, 'memo']);
+//authを含めるとリダイレクトする
+//なしだとWeb.phpと同様
+// Route::middleware('auth')->get('/memo',[MemoController::class, 'memo']);
 
 
