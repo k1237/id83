@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Memo;
+use App\Models\User;
 
 
 class MemoController extends Controller
@@ -54,9 +55,10 @@ class MemoController extends Controller
         // return $memo;
        
         //500エラーが消えるが表示はされないAPIは表示される
-        $user = auth()->user()->id ?? null;
-        $memo = Memo::where('user_id', $user)->first() ?? null;
-        $token =$user->createToken('myapptoken')->plainTextToken;
-        return $token ;
+        // $user = auth()->user()->id ?? null;
+        // $memo = Memo::where('user_id', $user)->first() ?? null;
+        // return $memo->memo??null ;
+        $token =Auth::createToken('myapptoken')->plainTextToken;
+        return $token;
     }
 }
