@@ -35,7 +35,7 @@ axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 // getToken();
 
 
-const API_TOKEN = "bkVdXQmAkcQLBPmNjqcuYHiFnfKP5DWyYu5jGL3za9BsGxUlIuZYi4tz3aqj5hvAgFaKozDMejD717n9";
+const API_TOKEN = "XrJ8j1CjPp3GUxWNo7GYDuhwGXmrxBntlXidwMJDUHsms4UnfCA1q4rGcNAkd372TYOTtHdyO0aGXU5M";
 
 axios.defaults.headers.common = {
        'Content-Type': 'application/json',
