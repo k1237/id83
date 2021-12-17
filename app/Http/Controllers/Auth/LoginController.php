@@ -37,11 +37,12 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
         $user = auth()->user()?? null;
 
         User::where('user_id', $user['id'])->update([
             'api_token' => null,
         ]);
+
+        $this->middleware('guest')->except('logout');  
     }
 }
