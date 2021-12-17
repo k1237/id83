@@ -34,13 +34,13 @@ Auth::routes();
 
 Route::middleware('auth')->get('api/token', [ApiTokenController::class, 'update']);
 
-//homeがpopper.js.mapになることがあるので修正
+//ログイン後popper.js.mapになることがあるので強制的にhomeに
 Route::middleware('auth')->get('js/popper.js.map', [ApiTokenController::class, 'update']);
 
 Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
 
 
-Route::middleware('auth:api')->get('api/memo',[MemoController::class, 'memo']);
+Route::middleware('auth')->get('api/memo',[MemoController::class, 'memo']);
 
 
 /*ステータス1のアイデア*/

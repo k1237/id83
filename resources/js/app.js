@@ -17,7 +17,6 @@ app.mount('#app')
 
 axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 
-
 const API_TOKEN = document
 .querySelector('meta[name="api-token"]')
 .getAttribute("content");
