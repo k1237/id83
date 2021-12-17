@@ -79,7 +79,7 @@ export default defineComponent({
     });
 
     const User = async function () {
-      await axios.get("https://idealist83.herokuapp.com/api/profile").then((response) => {
+      await axios.get("/api/profile").then((response) => {
         data.users = response.data;
       });
     }
