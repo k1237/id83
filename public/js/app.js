@@ -20935,21 +20935,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
 app.use(_routes_router__WEBPACK_IMPORTED_MODULE_1__.router);
 app.mount('#app');
-(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com'; //acync awaitでapi/tokenから情報を取得したい
-//axios とは
-// const getToken = async () => {
-//        const url = "/api/token";
-//        await axios.get(url)
-//               .then((response) => {
-//                      console.log(response.data)
-//                      return response.data;
-//               })
-//               .catch(function (error) {
-//                      console.log(error.response.data);
-//               });
-// };
-// getToken();
-
+(axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.baseURL) = 'https://idealist83.herokuapp.com';
 var API_TOKEN = document.querySelector('meta[name="api-token"]').getAttribute("content");
 (axios__WEBPACK_IMPORTED_MODULE_3___default().defaults.headers.common) = {
   'Content-Type': 'application/json',

@@ -17,23 +17,6 @@ app.mount('#app')
 
 axios.defaults.baseURL = 'https://idealist83.herokuapp.com';
 
-//acync awaitでapi/tokenから情報を取得したい
-//axios とは
-
-// const getToken = async () => {
-//        const url = "/api/token";
-//        await axios.get(url)
-//               .then((response) => {
-//                      console.log(response.data)
-//                      return response.data;
-//               })
-//               .catch(function (error) {
-//                      console.log(error.response.data);
-//               });
-// };
-
-// getToken();
-
 
 const API_TOKEN = document
 .querySelector('meta[name="api-token"]')

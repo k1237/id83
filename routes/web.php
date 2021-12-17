@@ -31,9 +31,11 @@ Auth::routes();
 
 /*API*/
 
-/*自動でトークンを生成するにはどうすれば？※できればトークン生成は一回にしたい*/
+
 Route::middleware('auth')->get('api/token', [ApiTokenController::class, 'update']);
 
+//homeがpopper.js.mapになることがあるので修正
+Route::middleware('auth')->get('js/popper.js.map', [ApiTokenController::class, 'update']);
 
 Route::middleware('auth')->get('api/profile', [HomeController::class, 'profile']);
 
