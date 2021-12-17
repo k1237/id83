@@ -39,7 +39,7 @@ class LoginController extends Controller
     {
         $user = auth()->user()?? null;
 
-        User::where('user_id', $user['id'])->update([
+        User::where('user_id', $user['id']??null)->update([
             'api_token' => null,
         ]);
 
