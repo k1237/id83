@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -34,10 +35,13 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $user = $request->user();
-        $user->update(['api_token' => null]);
+        $user = auth()->user();
+
+        User::where('user_id', $user['id'])->update([
+            'api_token' => null,
+        ]);
     }
 }
