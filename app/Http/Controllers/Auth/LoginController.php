@@ -28,7 +28,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home/'; 
+    
 
     /**
      * Create a new controller instance.
@@ -37,11 +38,11 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $user = auth()->user()?? null;
+        // $user = auth()->user()?? null;
 
-        User::where('id', $user['id']??null)->update([
-            'api_token' => null,
-        ]);
+        // User::where('id', $user['id']??null)->update([
+        //     'api_token' => null,
+        // ]);
 
         $this->middleware('guest')->except('logout');  
     }
